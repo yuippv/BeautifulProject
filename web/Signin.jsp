@@ -68,6 +68,7 @@
                     <div class="col">
                     </div>
                     <div class="col-6">
+                        <br>
                         <p>EMAIL ADDRESS</p>
                     </div>
                     <div class="col">
@@ -88,6 +89,7 @@
                     <div class="col">
                     </div>
                     <div class="col-6">
+                        <br>
                         <p>PASSWORD</p>
                     </div>
                     <div class="col">
