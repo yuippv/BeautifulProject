@@ -41,6 +41,7 @@ public class SigninServlet extends HttpServlet {
             out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
+            getServletContext().getRequestDispatcher("/Signin.jsp").forward(request, response);
         }
     }
 
