@@ -12,6 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello Woxxxxxld!</h1>
+        #ff748a //บานเย็น
+        #fff2e5 //ครีม
+        #b7ded7 //สีเขียวน้ำทะเลเมาดีฟ
+        #6f97b1 //คราม
+        #4d5784 //น้ำเงินกลางคืน
     </body>
 </html>
