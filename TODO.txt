@@ -73,6 +73,11 @@ VALUES ('QM105', 'MATHEMATICS', 'MTH101', 'ให้ A และ B เป็น�
 	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
 VALUES ('QM106', 'MATHEMATICS', 'MTH101', 'ถ้า P(A) เป็นสับเซตของ P(B) โดยที่ A และ B เป็นเซตใดๆ และ n(X) เป็นจำนวนสมาชิกของเซตX แล้ว A และ B มีความสัมพันธ์กันอย่างไร');
 
+INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM107', 'MATHEMATICS', 'MTH101', 'กำหนดให้เซต A,B,C เป็นเซตใดๆ และไม่ใช่เซตอนันต์ ถ้า A⊆ B และ B ⊆ C แล้ว จำนวนสมาชิกของเซตใดมีค่ามากที่สุด');
+
+	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM108', 'MATHEMATICS', 'MTH101', 'ข้อใดถูกต้องเมื่อ A และ B เป็นเซตใดๆที่ไม่ใช่เซตว่าง');
 
 --6.)Create table Choice
 
@@ -101,6 +106,28 @@ VALUES ('CM105', 'QM105', 'n(P(C))=32', 'n(P(C))=50', 'n(P(C))=28', 'n(P(C))=83'
 
 	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
 VALUES ('CM106', 'QM106', 'A เป็นสับเซตของ B', 'B เป็นสับเซตของ A', 'A - B', 'n(A) = n(B)');
+
+	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
+VALUES ('CM107', 'QM107', 'A ∪ B ∪ C', 'A ∪ B', 'A ∪ C', 'B ∪ C');
+
+	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
+VALUES ('CM108', 'QM108', 'A∪(B∩ C) = (A∪ B)∩ ( A∪ C)', 'A ∪ B = {} ก็ต่อเมื่อ A ⊆ B', 'A - B = {x | x∈ A และ x∈ B}', ' A∩ B = {x | x∉ A และ x∈ B');
+
+	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
+VALUES ('CM109', 'QM109', '', '', '', '');
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
