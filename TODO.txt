@@ -1,0 +1,107 @@
+MATHEMATICS : 1 , MTH
+SCIENCE : 2 , SCI  [ CHEMISTRY : CHE BIOLOGY : BIO PHYSICS : PHY ASTRONOMY : AST]
+THAI : 3 , THA
+HISTORY : 4 , HIS
+SOCIAL : 5 , SOC
+ENGLISH : 6 , ENG
+
+
+--1.) Create Database and Connect
+
+--2.) Create table ACCOUNT should have : firstname , lastname , gender, email , password , tel , address , school
+
+CREATE TABLE ACCOUNT(
+EMAIL VARCHAR(30) NOT NULL PRIMARY KEY,
+PASSWORD VARCHAR(20) NOT NULL,
+FIRSTNAME VARCHAR(30) NOT NULL,
+LASTNAME VARCHAR(30) NOT NULL,
+GENDER VARCHAR(10) NOT NULL,
+TEL VARCHAR(10) NOT NULL,
+ADDRESS VARCHAR(350) NOT NULL,
+SCHOOL VARCHAR(50) NOT NULL);
+
+--3.) Create table Subject
+
+CREATE TABLE SUBJECT(
+SUBJECT VARCHAR(50) NOT NULL PRIMARY KEY,
+
+INSERT INTO SUBJECT VALUES('MATHEMATICS' , null);
+INSERT INTO SUBJECT VALUES('CHEMISTRY' , null);
+INSERT INTO SUBJECT VALUES('BIOLOGY' , null);
+INSERT INTO SUBJECT VALUES('PHYSICS' , null);
+INSERT INTO SUBJECT VALUES('ASTRONOMY' , null);
+INSERT INTO SUBJECT VALUES('ENGLISH' , null);
+
+--4.)Create table Lesson
+
+CREATE TABLE LESSON(
+LESSONID VARCHAR(10) NOT NULL PRIMARY KEY,
+LESSONNAME VARCHAR(40) NOT NULL,
+SUBJECT VARCHAR(50) NOT NULL,
+LESSONDESCRIPTION VARCHAR(400));
+
+
+**Insert ....
+	INSERT INTO Y2S.PRODUCT (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('MTH101', 'SET', 'MATHEMATICS', 'SETTTTTTTTTTTT');
+
+
+--5.)Create table Quiz
+
+CREATE TABLE QUIZ(
+QUESTIONID VARCHAR(10) NOT NULL PRIMARY KEY,
+SUBJECT VARCHAR(50) NOT NULL,
+LESSONID VARCHAR(10) NOT NULL,
+QUESTION VARCHAR(300));
+
+**Insert ....
+	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM101', 'MATHEMATICS', 'MTH101', 'กำหนดให้ A,B และ C เป็นเซตที่มีความสัมพันธ์กันดังแผนภาพ ข้อใดถูกต้อง');
+
+	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM102', 'MATHEMATICS', 'MTH101', 'ในการสำรวจความชอบในการดื่มชาเขียวและกาแฟของกลุ่มตัวอย่าง 32 คน พบว่า ผู้ชอบดื่มชาเขียวมี 18 คน ผู้ชอบดื่มกาแฟมี 16  คน ผู้ไม่ชอบดื่มชาเขียวและไม่ชอบดื่มกาแฟมี 8 คน จำนวนคนที่ชอบดื่มชาเขียวอย่างเดียวเท่ากับข้อใดต่อไปนี้ ');
+
+	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM103', 'MATHEMATICS', 'MTH101', 'ให้ A เป็นเซตจำกัด และ B เป็นเซตอนันต์ ข้อความใดต่อไปนี้ไม่ถูกต้อง');
+
+	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM104', 'MATHEMATICS', 'MTH101', 'ในการสอบของนักเรียนชั้นประถมศึกษากลุ่มหนึ่ง พบว่า มีผู้สอบผ่านวิชาต่างๆดังนี้ คณิตศาสตร์ 36 คน  , สังคมศึกษา 50 คน , ภาษาไทย 44 คน , คณิตศาสตร์และสังคมศึกษา 15 คน , ภาษาไทยและสังคม 12 คน , คณิตศาสตร์และภาษาไทย 7 คน , ทั้งสามวิชา 5 คน จำนวนผู้สอบผ่านอย่างน้อยหนึ่งวิชากี่คน');
+
+	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM105', 'MATHEMATICS', 'MTH101', 'ให้ A และ B เป็นเซตซึ่ง n(A)=7, n(B)=4 และ n(A∩B)=3  ถ้า C=(A−B)∪(B−A) แล้ว n(P(C)) เท่ากับเท่าใด');
+
+	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM106', 'MATHEMATICS', 'MTH101', 'ถ้า P(A) เป็นสับเซตของ P(B) โดยที่ A และ B เป็นเซตใดๆ และ n(X) เป็นจำนวนสมาชิกของเซตX แล้ว A และ B มีความสัมพันธ์กันอย่างไร');
+
+
+--6.)Create table Choice
+
+CREATE TABLE CHOICE(
+CHOICEID VARCHAR(10) NOT NULL PRIMARY KEY,
+QUESTIONID VARCHAR(10) NOT NULL,
+CORRECTANSWER VARCHAR(300),
+CHOICE1 VARCHAR(300),
+CHOICE2 VARCHAR(300),
+CHOICE3 VARCHAR(300)) ;
+
+	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
+VALUES ('CM101', 'QM101', 'A∩B⊂B∪C', '(A∩B)∪C', 'A∪C=B', 'A−B⊂C');
+
+	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
+VALUES ('CM102', 'QM102', '8', '6', '10', '12');
+
+	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
+VALUES ('CM103', 'QM103', 'มีเซตอนันต์ที่เป็นสับเซตของA', 'มีเซตจำกัดที่เป็นสับเซตของA', 'มีเซตจำกัดที่เป็นสับเซตของB', 'มีเซตอนันต์ที่เป็นสับเซตของB');
+
+	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
+VALUES ('CM104', 'QM104', '101', '105', '95', '108');
+
+	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
+VALUES ('CM105', 'QM105', 'n(P(C))=32', 'n(P(C))=50', 'n(P(C))=28', 'n(P(C))=83');
+
+	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
+VALUES ('CM106', 'QM106', 'A เป็นสับเซตของ B', 'B เป็นสับเซตของ A', 'A - B', 'n(A) = n(B)');
+
+
+
+
