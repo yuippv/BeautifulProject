@@ -141,7 +141,7 @@
                     <div class="col">
                     </div>
                     <div class="col-6">
-                        <input class="boxRegis" type="submit" value="REGISTER"/>
+                        <input class="boxRegis"  value="REGISTER"/>
                     </div>
                     <div class="col">
                     </div>
