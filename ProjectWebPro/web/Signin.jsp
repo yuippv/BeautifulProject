@@ -50,6 +50,7 @@
         <title>Sign in Page</title>
     </head>
     <body class="body1">
+        
         <div class="container">
 
             <div class="row">
@@ -79,7 +80,7 @@
                     <div class="col">
                     </div>
                     <div class="col-6">
-                        <input class="box" name="username" type="text" required value="${param.username}"/>
+                        <input class="box" name="email" type="text" required value="${param.email}"/>
                     </div>
                     <div class="col">
                     </div>
@@ -110,6 +111,7 @@
                     <div class="col">
                     </div>
                     <div class="col-6">
+                        <p style="color:red">${errorsignin}</p>
                         <p><input name="remember"type="checkbox" value="Remember>"/> Remember</p>
                     </div>
                     <div class="col">

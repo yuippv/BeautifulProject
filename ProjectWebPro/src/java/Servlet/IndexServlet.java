@@ -5,53 +5,43 @@
  */
 package Servlet;
 
-import Jpacontroller.AccountJpaController;
-import Model.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
-import javax.annotation.Resource;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.transaction.UserTransaction;
 
 /**
  *
- * @author Antoprise
+ * @author yypsx
  */
-public class SigninServlet extends HttpServlet {
+public class IndexServlet extends HttpServlet {
 
-    @PersistenceUnit (unitName="BeautifulProjectPU")
-    EntityManagerFactory emf ;
-    
-    @Resource
-    UserTransaction utx ;
-    
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        String email = request.getParameter("email") ;
-        String password = request.getParameter("password") ;
-        
-        if(email!=null && email.trim().length()>0 && password!=null && password.trim().length()>0){
-            AccountJpaController ajc = new AccountJpaController(utx, emf) ;
-            List<Account> accountObj = ajc.findAccountEntities() ;
-                for(Account account : accountObj){
-                    if(account.getEmail().equals(email) && account.getPassword().equals(password)){
-                        HttpSession session = request.getSession() ;
-                        session.setAttribute("account", account);
-                        response.sendRedirect("/ProjectWebPro/Index.jsp");
-                        return ;
-                }
-            }
-                request.setAttribute("errorsignin", "Wrong email or password.");
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet IndexServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet IndexServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-        getServletContext().getRequestDispatcher("/Signin.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

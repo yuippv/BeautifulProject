@@ -4,9 +4,17 @@
         <servlet-name>SigninServlet</servlet-name>
         <servlet-class>Servlet.SigninServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>IndexServlet</servlet-name>
+        <servlet-class>Servlet.IndexServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SigninServlet</servlet-name>
         <url-pattern>/Signin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IndexServlet</servlet-name>
+        <url-pattern>/Index</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
