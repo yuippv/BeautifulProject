@@ -50,7 +50,7 @@
         <title>Sign in Page</title>
     </head>
     <body class="body1">
-        
+
         <div class="container">
 
             <div class="row">
@@ -96,7 +96,6 @@
                     <div class="col">
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col">
                     </div>
@@ -126,7 +125,7 @@
                     <div class="col">
                     </div>
                 </div>
-                    
+
                 <div class="row">
                     <div class="col">
                     </div>
@@ -137,17 +136,21 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col">
-                    </div>
-                    <div class="col-6">
-                        <input class="boxRegis"  value="REGISTER"/>
-                    </div>
-                    <div class="col">
-                    </div>
-                </div>
-
             </form>
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="col-6">
+                    <a href="Register">
+                        <button class="boxRegis">REGISTER</button>
+                    </a>
+
+                </div>
+                <div class="col">
+                </div>
+            </div>
+
+
         </div>
     </body>
 </html>
