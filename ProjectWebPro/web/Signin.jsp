@@ -144,7 +144,6 @@
                     <a href="Register">
                         <button class="boxRegis">REGISTER</button>
                     </a>
-
                 </div>
                 <div class="col">
                 </div>

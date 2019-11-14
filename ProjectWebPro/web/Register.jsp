@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-   <head>
+    <head>
         <!-- Required meta tags-->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -81,6 +81,16 @@
                                     </div>
                                 </div>
                             </div>
+                            <p>Sex</p>   
+                            <label class="container">One
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Two
+                                <input type="radio" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
+                                    
                             <div class="form-row m-b-55">
                                 <div class="name">Phone</div>
                                 <div class="value">
