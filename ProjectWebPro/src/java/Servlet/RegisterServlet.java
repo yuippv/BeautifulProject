@@ -79,8 +79,12 @@ public class RegisterServlet extends HttpServlet {
             request.setAttribute("errorregister", "Invalid data.");
             getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
         }
+<<<<<<< HEAD
 
     }
+=======
+        }
+>>>>>>> master
 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

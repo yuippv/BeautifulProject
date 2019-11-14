@@ -81,13 +81,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Sex</p>   
-                            <label class="container">One
-                                <input type="radio" checked="checked" name="radio">
+                            <p>Gender</p>   
+                            <label class="container">Male
+                                <input type="radio" checked="checked" name="gender" value="Male">
                                 <span class="checkmark"></span>
                             </label>
-                            <label class="container">Two
-                                <input type="radio" name="radio">
+                            <label class="container">Female
+                                <input type="radio" name="gender" value="Female">
                                 <span class="checkmark"></span>
                             </label>
                                     
