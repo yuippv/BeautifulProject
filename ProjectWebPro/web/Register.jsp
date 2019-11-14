@@ -40,20 +40,20 @@
                         <h2 class="title">Registration Form</h2>
                     </div>
                     <div class="card-body">
-                        <form action="RegisterServlet" method="POST">
+                        <form action="Register" method="post">
                             <div class="form-row m-b-55">
                                 <div class="name">Name</div>
                                 <div class="value">
                                     <div class="row row-space">
                                         <div class="col-2">
                                             <div class="input-group-desc">
-                                                <input class="input--style-5" type="text" name="fname" pattern="[A-Za-z].{6,}" title="Must contain at least 6 or more characters" required="">
+                                                <input class="input--style-5" type="text" name="firstname" pattern="[A-Za-z].{6,}" title="Must contain at least 6 or more characters" required="">
                                                 <label class="label--desc">first name</label>
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="input-group-desc">
-                                                <input class="input--style-5" type="text" name="lname" pattern="[A-Za-z].{6,}" title="Must contain at least 6 or more characters" required="">
+                                                <input class="input--style-5" type="text" name="lastname" pattern="[A-Za-z].{6,}" title="Must contain at least 6 or more characters" required="">
                                                 <label class="label--desc">last name</label>
                                             </div>
                                         </div>
@@ -65,7 +65,7 @@
                                 <div class="value">
                                     <div class="input-group">
                                         <input class="input--style-5" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="" title="Must contain correct email form.">
-                                        <label class="label--desc" style="color: red">${warn}</label>
+                                        <label class="label--desc" style="color: red">${warning}</label>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                                     <div class="row row-refine">
                                         <div class="col-9">
                                             <div class="input-group-desc">
-                                                <input class="input--style-5" type="text" name="tell" pattern="[0-9]{10}" maxlength="10"  title="Must contain 10 Numbers" required="">
+                                                <input class="input--style-5" type="text" name="tel" pattern="[0-9]{10}" maxlength="10"  title="Must contain 10 Numbers" required="">
                                             </div>
                                         </div>
                                     </div>
@@ -104,24 +104,11 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="name">Zip Code</div>
+                                <div class="name">School</div>
                                 <div class="value">
                                     <div class="input-group">
                                         <div class="rs-select2 js-select-simple select--no-search">
-                                            <input class="input--style-5" type="text" name="pincode" style="width: 104px;" pattern="[0-9]{5}" maxlength="5" title="Must contain 5 Numbers" required="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row m-b-55">
-                                <div class="name">Debit Card</div>
-                                <div class="value">
-                                    <div class="row row-space">
-                                        <div class="col-2">
-                                            <div class="input-group-desc">
-                                                <input class="input--style-5" type="text" name="debit" pattern="[0-9]{16}" maxlength="16"  title="Must contain 16 Numbers">
-                                                <label class="label--desc">Debit card 16 number</label>
-                                            </div>
+                                            <input class="input--style-5" type="text" name="school" style="width: 104px;" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -131,7 +118,7 @@
                                 <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
                             </div><br><hr style="width: 172px;">
                         </form>
-                        <br><form action="index.jsp" method="POST"><button class="btn btn--radius-2 btn--black" type="submit">Cancel</button></form>
+                        <br><form action="Index.jsp" method="POST"><button class="btn btn--radius-2 btn--black" type="submit">Cancel</button></form>
                     </div>
                 </div>
             </div>
