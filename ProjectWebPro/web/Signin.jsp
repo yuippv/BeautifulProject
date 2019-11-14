@@ -80,7 +80,7 @@
                     <div class="col">
                     </div>
                     <div class="col-6">
-                        <input class="box" name="email" type="text" required value="${param.email}"/>
+                        <input class="box" name="email" type="text" required value="${param.email}" placeholder="Your email.."/>
                     </div>
                     <div class="col">
                     </div>
@@ -101,7 +101,7 @@
                     <div class="col">
                     </div>
                     <div class="col-6">
-                        <input class="box" name="password" type="text" required value="${param.password}"/>
+                        <input class="box" name="password" type="password" required value="${param.password}" placeholder="Your password.."/>
                     </div>
                     <div class="col">
                     </div>
@@ -111,8 +111,7 @@
                     <div class="col">
                     </div>
                     <div class="col-6">
-                        <p style="color:red">${errorsignin}</p>
-                        <p><input name="remember"type="checkbox" value="Remember>"/> Remember</p>
+                        <span style="color:red">${errorsignin}</span>
                     </div>
                     <div class="col">
                     </div>
