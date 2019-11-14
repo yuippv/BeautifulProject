@@ -37,7 +37,7 @@ public class RegisterServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-<<<<<<< Updated upstream
+
         HttpSession session = request.getSession();
         String email = request.getParameter("email");
         String firstname = request.getParameter("firstname");
@@ -81,49 +81,7 @@ public class RegisterServlet extends HttpServlet {
         }
 
     }
-=======
-//        HttpSession session = request.getSession();
-//        String email = request.getParameter("email");
-//        String firstname = request.getParameter("firstname");
-//        String lastname = request.getParameter("lastname");
-//        String password = request.getParameter("password");
-//        String tel = request.getParameter("tel");
-//        String address = request.getParameter("address");
-//        String school = request.getParameter("school");
-//        
-//        if( email != null && password != null){
-//        AccountJpaController ajc = new AccountJpaController(utx, emf);
-//        Account account = ajc.findAccount(S)
-        }
-        
-//        if (firstname != null && firstname.trim().length() > 0 && lastname != null && lastname.trim().length() > 0
-//                && email != null && email.trim().length() > 0 && password != null && password.trim().length() > 0
-//                && tel != null && tel.trim().length() > 0 && address != null && address.trim().length() > 0
-//                && school != null && school.trim().length() > 0) {
-//            for (Account account : accountDB) {
-//                if (account.getEmail().equalsIgnoreCase(email)) {
-//                    request.setAttribute("warning", "Email has been use.");
-//                    getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
-//                }
-//                Account newAccount = new Account(email, password, firstname, lastname, tel, address, school);
-//                try {
-//                    ajc.create(newAccount);
-//                    request.setAttribute("registercp", "Register Complete.");
-//                      System.out.println("xx");
-//                    getServletContext().getRequestDispatcher("/Index.jsp").forward(request, response);
-//                    return;
-//                } catch (RollbackFailureException ex) {
-//                    Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
-//                } catch (Exception ex) {
-//                    Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//            }
-//        } else{
-//            request.setAttribute("errorregister", "Invalid data.");
-//            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
-//        }
-//        
->>>>>>> Stashed changes
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
