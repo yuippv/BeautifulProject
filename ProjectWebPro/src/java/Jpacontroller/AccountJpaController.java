@@ -43,7 +43,7 @@ public class AccountJpaController implements Serializable {
             em = getEntityManager();
             em.persist(account);
             utx.commit();
-        } catch (Exception ex) {
+       } catch (Exception ex) {
             try {
                 utx.rollback();
             } catch (Exception re) {
