@@ -25,7 +25,7 @@
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-position:right;
-                height: 800px;
+                height: 750px;
                 background-color: #b3aad6;
                 font-family: 'Titillium Web', sans-serif;
                 font-weight: 700; 
