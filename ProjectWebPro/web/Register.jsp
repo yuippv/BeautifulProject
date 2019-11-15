@@ -120,6 +120,18 @@
                     
                 <div class="row">
                     <div class="col"></div>
+                    <div class="col-6" style="text-align: center;">
+                        <input class="input--style-5" id="pwd" type="password" name="password" style="width: 444px;" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="">
+                        <button type="button" id="eye">
+                            <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png" alt="eye" />
+                        </button>
+                    </div>
+                    <div class="col"></div>      
+                </div>
+                    
+                <div class="row">
+                    <div class="col"></div>
                     <div class="col-6">
                         <br>
                         <p>ADDRESS</p>
