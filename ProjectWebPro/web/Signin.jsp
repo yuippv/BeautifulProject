@@ -43,7 +43,7 @@
             }
 
             .boxSign{
-                background-color : #ff748a;
+                background-color :  #f97ab1;
                 border: none;
                 width: 100%;
                 transition: 0.3s;
@@ -52,7 +52,7 @@
             .boxSign:hover {opacity: 0.5}
 
             .boxRegis{
-                background-color : #b7ded7;
+                background-color :#6a5bab;
                 border: none;
                 width: 100%;
                 transition: 0.3s;

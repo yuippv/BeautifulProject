@@ -59,7 +59,7 @@ public class RegisterServlet extends HttpServlet {
             for (Account account : accountDB) {
                 if (account.getEmail().equalsIgnoreCase(email)) {
                     request.setAttribute("warning", "Email has been use.");
-                    getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+                    response.sendRedirect("/ProjectWebPro/Register.jsp");
                     return;
                 }
                 
