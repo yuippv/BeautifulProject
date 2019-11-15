@@ -12,6 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Y2S Academy</h1>
+        <a href="MyAccount.jsp">My Profile</a>
+
     </body>
 </html>
