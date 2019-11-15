@@ -67,14 +67,14 @@
 
                                 <div class="col-xs-6">
                                     <label for="first_name"><h4>First name</h4></label>
-                                    <input type="text" class="form-control" name="firstname" id="first_name" value="${account.firstname}" pattern=".{6,}" title="Must contain at least 6 or more characters" required>
+                                    <input type="text" class="form-control" name="firstname" id="firstname" value="${account.firstname}" pattern=".{6,}" title="Must contain at least 6 or more characters" required>
                                 </div>
                             </div>
                             <div class="form-group">
 
                                 <div class="col-xs-6">
                                     <label for="last_name"><h4>Last name</h4></label>
-                                    <input type="text" class="form-control" name="lastname" id="last_name" value="${account.lastname}" pattern=".{6,}" title="Must contain at least 6 or more characters" required>
+                                    <input type="text" class="form-control" name="lastname" id="lastname" value="${account.lastname}" pattern=".{6,}" title="Must contain at least 6 or more characters" required>
                                 </div>
                             </div>
 

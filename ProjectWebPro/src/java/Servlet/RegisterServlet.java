@@ -76,8 +76,7 @@ public class RegisterServlet extends HttpServlet {
                 response.sendRedirect("/ProjectWebPro/Index.jsp");
                 return;
         } else {
-            request.setAttribute("errorregister", "Invalid dat\n" +
-"a.");
+            request.setAttribute("errorregister", "Invalid data");
             getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
         }
     }
