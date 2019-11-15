@@ -62,7 +62,7 @@
                     <div class="tab-pane active" id="home">
                         <hr>
                         <span style="color: #fbb710">${notice}</span>
-                        <form class="form" action="EditMyAccount" method="post" id="registrationForm">
+                        <form class="form" action="EditAccount" method="post" id="registrationForm">
                             <div class="form-group">
 
                                 <div class="col-xs-6">
