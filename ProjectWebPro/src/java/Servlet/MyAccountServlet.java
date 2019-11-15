@@ -38,7 +38,7 @@ public class MyAccountServlet extends HttpServlet {
 
         if (accountObj == null) {
             request.setAttribute("message", "Please Login.");
-            getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/Signin.jsp").forward(request, response);
             return;
         }
         getServletContext().getRequestDispatcher("/MyAccount.jsp").forward(request, response);
