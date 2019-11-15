@@ -20,6 +20,10 @@
         <servlet-name>MyAccountServlet</servlet-name>
         <servlet-class>Servlet.MyAccountServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditAccountServlet</servlet-name>
+        <servlet-class>Servlet.EditAccountServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SigninServlet</servlet-name>
         <url-pattern>/Signin</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>MyAccountServlet</servlet-name>
         <url-pattern>/MyAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditAccountServlet</servlet-name>
+        <url-pattern>/EditAccount</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
