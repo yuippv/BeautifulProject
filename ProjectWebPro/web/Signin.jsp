@@ -16,8 +16,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <style>
            body{
-              background-image: url(images/bg/bg.PNG);
-                /*background-color: #fff2e5;*/
+              /*background-image: url(images/bg/bg.PNG);*/
+                background-color: #b3aad6;
                 font-family: 'Titillium Web', sans-serif;
                 font-weight: 700;   
                 
