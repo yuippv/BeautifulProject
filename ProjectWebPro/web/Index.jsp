@@ -14,6 +14,10 @@
     <body>
         <h1>Y2S Academy</h1>
         <a href="MyAccount.jsp">My Profile</a>
+        <br>
+        <a href="Signin.jsp">Signin</a>
+        <br>
+        <a href="Register.jsp">Register</a>
 
     </body>
 </html>
