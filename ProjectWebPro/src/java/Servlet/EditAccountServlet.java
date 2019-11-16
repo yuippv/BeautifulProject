@@ -11,6 +11,7 @@ import Jpacontroller.exceptions.RollbackFailureException;
 import Model.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
@@ -50,6 +51,7 @@ public class EditAccountServlet extends HttpServlet {
         HttpSession session = request.getSession(false) ;
         AccountJpaController ajc = new AccountJpaController(utx, emf) ;
         Account account = (Account)session.getAttribute("account") ;
+
         
         account.setEmail(email);
         account.setPassword(password);
@@ -61,6 +63,9 @@ public class EditAccountServlet extends HttpServlet {
         account.setSchool(school);
         try{
             ajc.edit(account);
+
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(EditAccountServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (RollbackFailureException ex) {
             Logger.getLogger(EditAccountServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
@@ -68,6 +73,7 @@ public class EditAccountServlet extends HttpServlet {
         }
         request.setAttribute("notice", "Updated profile.");
         getServletContext().getRequestDispatcher("/MyAccount").forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
