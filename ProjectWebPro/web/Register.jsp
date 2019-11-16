@@ -208,6 +208,8 @@
                         </div>
                     <div class="col"></div>      
                 </div>
+                                    </form>
+
 
                 <br>
                 <div class="row">
@@ -217,13 +219,13 @@
                 
                     <div class="col-8" style="text-align: center;">
                         <input type="submit" value="CONFIRM" class="boxCon">
-                        <form action="Index.jsp" method="POST">
+
+                        <a href="Signin.jsp">
                             <input type="submit" value="CANCEL" class="boxCan">
-                        </form>
+                        </a>
 
                     </div>
                 </div>
-            </form>
         </div>
             
 
