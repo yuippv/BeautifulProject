@@ -23,7 +23,6 @@
 
         <style>
             body{
-                background-color: #b3aad6;
                 text-align: center;
                 background-color: #b3aad6;
                 font-family: 'Titillium Web', sans-serif;

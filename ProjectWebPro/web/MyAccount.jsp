@@ -37,17 +37,27 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         
         <style>
-            .bg{
+            body{
                 background-color: #b3aad6;
-            }            
+                font-family: 'Titillium Web', sans-serif;
+                font-weight: 700; 
+                color: white;
+            }    
+            
+            .topic{
+                text-align: center;
+                font-size: 100px;
+            }
+            
+            
         </style>
     </head>
 
 
  
 
-    <body class="bg">
-        <h1>My Profile</h1>
+    <body>
+        <h1 class="topic">My Profile</h1>
         <a href="Index.jsp">Home</a>
         <hr>
         <div class="container bootstrap snippet">
@@ -59,10 +69,10 @@
                 <div class="col-sm-3"><!--left col-->
 
 
-                    <div class="panel panel-default">
+<!--                    <div class="panel panel-default">
                         <div class="panel-heading">Order<i class="fa fa-link fa-1x"></i></div>
                         <div class="panel-body"><a href="OrderServlet">My Order</a></div>
-                    </div>
+                    </div>-->
 
                 </div><!--/col-3-->
                 <div class="col-sm-9">
