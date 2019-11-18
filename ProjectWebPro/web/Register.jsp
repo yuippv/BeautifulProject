@@ -117,8 +117,16 @@
                 box-sizing: border-box;
                 background-color: white;
                 /*border-radius:10px;*/ 
+                
             }
-
+/*            .container .checkmark:after {
+                top: 9px;
+                left: 9px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: white;
+            }*/
 
         </style>
     </head>
@@ -193,6 +201,23 @@
                     <div class="col"></div>
                     <div class="col-6" style="text-align: center;">
                         <div class="frame">
+                            GENDER : <label class="container">Male
+                                <input type="radio" checked="checked" name="gender" value="male">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Female
+                                <input type="radio" name="gender" value="female">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col"></div>      
+                </div>
+
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-6" style="text-align: center;">
+                        <div class="frame">
                             ADDRESS : <input class="boxAddr" type="text" name="address">
                         </div>
                     </div>
@@ -218,7 +243,10 @@
                 </div>
 
                 <div class="col-8" style="text-align: center;">
-                    <input type="submit" value="CONFIRM" class="boxCon">
+
+                    <a href="Index.jsp">
+                        <input type="submit" value="CONFIRM" class="boxCon">
+                    </a>
 
                     <a href="Signin.jsp">
                         <input type="submit" value="CANCEL" class="boxCan">
