@@ -40,13 +40,44 @@ public class EditAccountServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String email = request.getParameter("email") ;
+        if(email==null){
+            request.getParameterValues("email") ;
+        }
+        
         String password = request.getParameter("password") ;
+        if(password==null){
+            request.getParameterValues("password") ;
+        }
+        
         String firstname = request.getParameter("firstname") ;
+        if(firstname==null){
+            request.getParameterValues("firstname") ;
+        }
+        
         String lastname = request.getParameter("lastname") ;
+        if(lastname==null){
+            request.getParameterValues("lastname") ;
+        }
+        
         String address = request.getParameter("address") ;
+        if(address==null){
+            request.getParameterValues("address") ;
+        }
+        
         String gender = request.getParameter("gender") ;
+        if(gender==null){
+            request.getParameterValues("gender") ;
+        }
+        
         String tel = request.getParameter("tel") ;
+        if(tel==null){
+            request.getParameterValues("tel") ;
+        }
+        
         String school = request.getParameter("school") ;
+        if(school==null){
+            request.getParameterValues("school") ;
+        }
                 
         HttpSession session = request.getSession(false) ;
         AccountJpaController ajc = new AccountJpaController(utx, emf) ;
