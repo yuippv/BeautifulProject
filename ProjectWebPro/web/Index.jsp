@@ -18,6 +18,8 @@
         <a href="Signin.jsp">Signin</a>
         <br>
         <a href="Register.jsp">Register</a>
+        <br>
+        <a href="Signout">Signout</a>
 
     </body>
 </html>

@@ -5,7 +5,6 @@
  */
 package Jpacontroller;
 
-import Jpacontroller.exceptions.IllegalOrphanException;
 import Jpacontroller.exceptions.NonexistentEntityException;
 import Jpacontroller.exceptions.PreexistingEntityException;
 import Jpacontroller.exceptions.RollbackFailureException;
@@ -44,7 +43,7 @@ public class AccountJpaController implements Serializable {
             em = getEntityManager();
             em.persist(account);
             utx.commit();
-       } catch (Exception ex) {
+        } catch (Exception ex) {
             try {
                 utx.rollback();
             } catch (Exception re) {
@@ -61,7 +60,7 @@ public class AccountJpaController implements Serializable {
         }
     }
 
-    public void edit(Account account) throws IllegalOrphanException, NonexistentEntityException, RollbackFailureException, Exception {
+    public void edit(Account account) throws NonexistentEntityException, RollbackFailureException, Exception {
         EntityManager em = null;
         try {
             utx.begin();
