@@ -96,8 +96,6 @@ public class EditAccountServlet extends HttpServlet {
         try{
             ajc.edit(account);
 
-        } catch (NonexistentEntityException ex) {
-            Logger.getLogger(EditAccountServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (RollbackFailureException ex) {
             Logger.getLogger(EditAccountServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
