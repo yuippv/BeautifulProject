@@ -98,10 +98,10 @@
                         </div>
                             
                         <div class="form-group">
-
+                            
                             <div class="col-xs-6">
                                 <label for="email"><h4>Email</h4></label>
-                                <input type="email" class="box form-control" name="email" id="email" value="${account.email}" disabled>
+                                <input type="email" class="box form-control" name="email" id="email" value="${account.email}" readonly>
                             </div>
                         </div>
                             
@@ -115,7 +115,7 @@
                         <div class="form-group">
                             <div class="col-xs-6">
                                 <label for="last_name"><h4>Password</h4></label>
-                                <input type="password" class="box form-control" name="password" id="lastname" value="${account.password}" disabled>
+                                <input type="password" class="box form-control" name="password" id="lastname" value="${account.password}" readonly>
                             </div>
                         </div>
                             
