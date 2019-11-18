@@ -36,7 +36,7 @@ public class SignoutServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         session.invalidate();
-        response.sendRedirect("/ProjectWebPro/Landing.jsp");
+        response.sendRedirect("/ProjectWebPro/Home.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
