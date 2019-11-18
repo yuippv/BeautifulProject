@@ -61,6 +61,7 @@ public class EditAccountServlet extends HttpServlet {
         account.setGender(gender);
         account.setTel(tel);
         account.setSchool(school);
+        
         try{
             ajc.edit(account);
 
