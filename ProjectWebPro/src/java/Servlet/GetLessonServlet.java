@@ -9,8 +9,6 @@ import Jpacontroller.LessonJpaController;
 import Model.Lesson;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.annotation.Resource;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
@@ -18,51 +16,36 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
 /**
  *
  * @author yypsx
  */
-public class LessonServlet extends HttpServlet {
+public class GetLessonServlet extends HttpServlet {
 
-    @PersistenceUnit (unitName="BeautifulProjectPU")
-    EntityManagerFactory emf ;
-    
-    @Resource
-    UserTransaction utx ;
+   @PersistenceUnit (unitName="BeautifulProjectPU")
+   EntityManagerFactory emf ;
+   
+   @Resource
+   UserTransaction utx ;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession(false) ;
-        String lesson = request.getParameter("lesson") ;
-        LessonJpaController ljc = new LessonJpaController(utx, emf) ;
+        request.setCharacterEncoding("UTF-8");
+        String lessonid = request.getParameter("lessonid");
         
-        if(lesson != null){
-            if(lesson.equalsIgnoreCase("subject")){
-                List<Lesson> lessons = ljc.findLessonEntities() ;
-                request.setAttribute("topic", "All");
-                request.setAttribute("lesson", lessons);
-                response.sendRedirect("/ProjectWebPro/Quiz.jsp");
-                return ;
-        } else{
-               List<Lesson> lessons = ljc.findLessonEntities() ;
-               List<Lesson> lessonAdd = new ArrayList(100);
-               
-               for(Lesson lessonSet : lessons){
-                   if(lessonSet.getSubject().equals(lesson)){
-                       lessonAdd.add(lessonSet);
-                   }
-            }
-               request.setAttribute("topic", lesson);
-               session.setAttribute("lesson",lessonAdd);
-               response.sendRedirect("/ProjectWebPro/Quiz.jsp");
-               return;
-         }
+        if(lessonid == null){
+           getServletContext().getRequestDispatcher("/LessonList?catagories=subject").forward(request, response);
+        }else{
+            LessonJpaController ljc = new LessonJpaController(utx, emf);
+            Lesson lesson = ljc.findLesson(lessonid);
+            request.setAttribute("lesson", lesson);
+                getServletContext().getRequestDispatcher("/Quiz.jsp").forward(request, response);
         }
-        getServletContext().getRequestDispatcher("/Index.jsp").forward(request, response);
+        
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
