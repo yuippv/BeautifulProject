@@ -84,7 +84,7 @@
                 border-radius:10px;
                 border: none;
                 height: 30px;
-                width: 75%;
+                width: 80%;
             }
 
             .boxPhone{
@@ -116,17 +116,9 @@
                 padding: 20px;
                 box-sizing: border-box;
                 background-color: white;
-                /*border-radius:10px;*/ 
 
             }
-            /*            .container .checkmark:after {
-                            top: 9px;
-                            left: 9px;
-                            width: 8px;
-                            height: 8px;
-                            border-radius: 50%;
-                            background: white;
-                        }*/
+
             .wrapper-class input[type="radio"] {
                 width: 30px;
             }
@@ -187,9 +179,6 @@
                             <div class="frame">
                                 PASSWORD : <input class="boxPass" id="pwd" type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                                                   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="">
-                                <button type="button" id="eye">
-                                    <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png" alt="eye" />
-                                </button>
                             </div>
                         </div>
                         <div class="col"></div>      
