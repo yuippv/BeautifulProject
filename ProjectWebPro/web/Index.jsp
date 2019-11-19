@@ -73,6 +73,7 @@
                 </ul>
             </nav>
 
+            
             <!-- Page Content  -->
             <div id="content">
 
@@ -86,6 +87,15 @@
                         </div>
                     </div>
                 </nav>
+                        
+                                        <a href="GetLesson?lessonid=MTH101">
+                            <!-- Hover Content -->
+                            <div class="hover-content">
+                                <div class="line"></div>
+                                <p>MTH101</p>
+                                <h4>SET</h4>
+                            </div>
+                        </a>
             </div>
         </div>
         <!-- jQuery CDN - Slim version (=without AJAX) -->
