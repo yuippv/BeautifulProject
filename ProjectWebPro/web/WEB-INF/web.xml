@@ -28,6 +28,10 @@
         <servlet-name>QuizServlet</servlet-name>
         <servlet-class>Servlet.QuizServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LessonServlet</servlet-name>
+        <servlet-class>Servlet.LessonServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SigninServlet</servlet-name>
         <url-pattern>/Signin</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>QuizServlet</servlet-name>
         <url-pattern>/Quiz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LessonServlet</servlet-name>
+        <url-pattern>/Lesson</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
