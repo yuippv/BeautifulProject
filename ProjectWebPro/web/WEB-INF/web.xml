@@ -29,8 +29,12 @@
         <servlet-class>Servlet.QuizServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LessonServlet</servlet-name>
-        <servlet-class>Servlet.LessonServlet</servlet-class>
+        <servlet-name>LessonListServlet</servlet-name>
+        <servlet-class>Servlet.LessonListServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetLessonServlet</servlet-name>
+        <servlet-class>Servlet.GetLessonServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SigninServlet</servlet-name>
@@ -61,8 +65,12 @@
         <url-pattern>/Quiz</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>LessonServlet</servlet-name>
-        <url-pattern>/Lesson</url-pattern>
+        <servlet-name>GetLessonServlet</servlet-name>
+        <url-pattern>/GetLesson</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LessonListServlet</servlet-name>
+        <url-pattern>/LessonList</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
