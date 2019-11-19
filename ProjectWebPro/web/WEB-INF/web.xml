@@ -36,6 +36,10 @@
         <servlet-name>GetLessonServlet</servlet-name>
         <servlet-class>Servlet.GetLessonServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetQuestionServlet</servlet-name>
+        <servlet-class>Servlet.GetQuestionServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SigninServlet</servlet-name>
         <url-pattern>/Signin</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>LessonListServlet</servlet-name>
         <url-pattern>/LessonList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetQuestionServlet</servlet-name>
+        <url-pattern>/GetQuestion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
