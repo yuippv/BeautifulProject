@@ -9,25 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>My Account Page</title>
-
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!------ Include the above in your HEAD tag ---------->
-
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!------ Include the above in your HEAD tag ---------->
-
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-        <!--//font-family-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>My Account Page</title>
+     <!--//font-family-->
         <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700,900&display=swap" rel="stylesheet">
 
         <!--bootstrap-->
@@ -36,17 +22,24 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+         <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css" >
+
+        <!-- Font Awesome JS -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
         <style>
             body{
-                background-color: #b3aad6;
-                font-family: 'Titillium Web', sans-serif;
-                font-weight: 700; 
-                color: white;
+/*                background-color: #b3aad6;*/
+/*                font-family: 'Titillium Web', sans-serif;*/
+
             }    
 
             .topic{
                 text-align: center;
-                font-size: 100px;
+                font-size: 50px;
             }
 
             .box{
@@ -55,29 +48,75 @@
                 border: none;
                 height: 40px;
             }
-
+            .helloName{
+                vertical-align: middle; 
+                display: inline-block;
+                
+            }
+               .profile{
+                width:20%;
+                margin : 10px;
+            }
 
         </style>
     </head>
-
-
-
-
     <body>
-        <h1 class="topic">My Profile</h1>
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Y2S Academe</h3>
+                </div>
 
+                <ul class="list-unstyled components">
+                    <li>
+                     <a href="Index.jsp"><img src="images/male.png" style="vertical-align:middle; width: 30px;">Home</a>
+                    </li>
+                    <li>
+                        <a href="Subject.jsp">Subject</a>
+                    </li>
+                    <li>
+                        <a href="MyAccount.jsp">Profile</a>
+                    </li>
+                    <li>
+                        <a href="Signin.jsp">Logout</a>
+                    </li>
+                    
+<!--                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="#">Page 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 3</a>
+                            </li>
+                        </ul>
+                    </li>-->
+                    
+                </ul>
+            </nav>
 
-        <div class="container bootstrap snippet">
+            <!-- Page Content  -->
+            <div id="content">
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <div class="col-4"></div>
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <img src="images/male.png" class="profile" style="vertical-align:middle">
+                            <h3 class="helloName">Hello : ${account.firstname}</h3>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container bootstrap snippet">
 
             <div class="row">
-                <div class="col-sm-3"><!--left col-->
-                    <div class="panel panel-default">   
-
-                        <div class="panel-body"><a href="MyAccount.jsp">my account</a></div>
-                        <div class="panel-body"><a href="Index.jsp">Home</a></div>
-                    </div>
-
-                </div><!--/col-3-->
 
                 <div class="col-sm-9">
                     <span style="color: #fbb710">${notice}</span>
@@ -151,7 +190,9 @@
                 </div>
             </div><!--/col-9-->
         </div><!--/row-->
+            </div>
+        </div>
 
-
+    
     </body>
 </html>
