@@ -112,23 +112,6 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col"></div>
-                            <div class="col-6" style="text-align: center;">
-                                <div class="frame">
-                                    GENDER : <label class="container">Male
-                                        <input type="radio" checked="checked" name="gender" value="male">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Female
-                                        <input type="radio" name="gender" value="female">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col"></div>      
-                        </div>
-
                         <div class="form-group">
                             <div class="col-xs-6">
                                 <label for="last_name"><h4>Password</h4></label>
@@ -147,6 +130,13 @@
                             <div class="col-xs-6">
                                 <label for="school"><h4>School</h4></label>
                                 <input type="text" name="school" class="box form-control" id="school" value="${account.school}" title="edit an school." required>
+                            </div>
+                        </div>
+                            
+                        <div class="form-group">
+                            <div class="col-xs-6">
+                                <label for="gender"><h4>Gender</h4></label>
+                                <input type="text" name="gender" class="box form-control" id="gender" value="${account.gender}" title="edit an school." readonly>
                             </div>
                         </div>
 
