@@ -66,15 +66,17 @@ public class RegisterServlet extends HttpServlet {
             }
             Account newAccount = new Account(email, password, firstname, lastname, gender, tel, address, school);
                 try {
+                    System.out.println(email + password + firstname + lastname + gender + tel + address + school);
                     ajc.create(newAccount);
+                    
+                    response.sendRedirect("/ProjectWebPro/Index.jsp");
+                    return;
                 } catch (RollbackFailureException ex) {
                     Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (Exception ex) {
                     Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
-                response.sendRedirect("/ProjectWebPro/Index.jsp");
-                return;
         } else {
             request.setAttribute("errorregister", "Invalid data");
             getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);

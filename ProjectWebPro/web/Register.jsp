@@ -117,145 +117,144 @@
                 box-sizing: border-box;
                 background-color: white;
                 /*border-radius:10px;*/ 
-                
+
             }
-/*            .container .checkmark:after {
-                top: 9px;
-                left: 9px;
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background: white;
-            }*/
+            /*            .container .checkmark:after {
+                            top: 9px;
+                            left: 9px;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background: white;
+                        }*/
 
         </style>
     </head>
     <body>
-
-        <div class="container">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col-6" style="text-align: center; margin-top: 50px;">
-                    <h1>Register</h1>
+        <form method="post" action="Register">
+            <div class="container">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-6" style="text-align: center; margin-top: 50px;">
+                        <h1>Register</h1>
+                    </div>
+                    <div class="col"></div>      
                 </div>
-                <div class="col"></div>      
+                <form action="Register" method="post" style="margin-top: 20px;">
+
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-6">
+                            <div class="frame" style="text-align: center; ">
+                                FIRSTNAME : <input class="boxName" type="text" name="firstname" pattern="[A-Za-z].{6,}" title="Must contain at least 6 or more characters" required="">
+                            </div></div>
+                        <div class="col">       
+                        </div>
+                    </div>
+
+                    <div class="row"> 
+                        <div class="col"></div>
+                        <div class="col-6">
+                            <div class="frame" style="text-align: center;">
+                                LASTNAME : <input class="boxName" type="text" name="lastname" pattern="[A-Za-z].{6,}" title="Must contain at least 6 or more characters" required="">
+                            </div>
+                        </div>
+                        <div class="col"></div>      
+                    </div>
+
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-6" style="text-align: center;">
+                            <div class="frame">
+                                EMAIL : <input class="boxMail" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="" title="Must contain correct email form.">
+                                <label style="color: red">${warning}</label>
+                            </div>
+                        </div>
+                        <div class="col"></div>      
+                    </div>
+
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-6" style="text-align: center;">
+                            <div class="frame">
+                                PASSWORD : <input class="boxPass" id="pwd" type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                                                  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="">
+                                <button type="button" id="eye">
+                                    <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png" alt="eye" />
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col"></div>      
+                    </div>
+
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-6" style="text-align: center;">
+                            <div class="frame">
+                                PHONE : <input class="boxPhone" type="text" name="tel" pattern="[0-9]{10}" maxlength="10"  title="Must contain 10 Numbers" required="">
+                            </div>
+                        </div>
+                        <div class="col"></div>      
+                    </div>
+
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-6" style="text-align: center;">
+                            <div class="frame">
+                                GENDER : <label class="container">Male
+                                    <input type="radio" checked="checked" name="gender" value="male">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Female
+                                    <input type="radio" name="gender" value="female">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col"></div>      
+                    </div>
+
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-6" style="text-align: center;">
+                            <div class="frame">
+                                ADDRESS : <input class="boxAddr" type="text" name="address">
+                            </div>
+                        </div>
+                        <div class="col"></div>      
+                    </div>
+
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-6" style="text-align: center;">
+                            <div class="frame">
+                                SCHOOL : <input class="boxSch" type="text" name="school" required="">
+                            </div>
+                        </div>
+                        <div class="col"></div>      
+                    </div>
+
+
+                <br>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col">
+                    </div>
+
+                    <div class="col-8" style="text-align: center;">
+
+                        <a href="Index.jsp">
+                            <input type="submit" value="CONFIRM" class="boxCon">
+                        </a>
+
+                        <a href="Signin.jsp">
+                            <input type="submit" value="CANCEL" class="boxCan">
+                        </a>
+
+                    </div>
+                </div>
             </div>
-            <form action="Register" method="post" style="margin-top: 20px;">
-
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-6">
-                        <div class="frame" style="text-align: center; ">
-                            FIRSTNAME : <input class="boxName" type="text" name="firstname" pattern="[A-Za-z].{6,}" title="Must contain at least 6 or more characters" required="">
-                        </div></div>
-                    <div class="col">       
-                    </div>
-                </div>
-
-                <div class="row"> 
-                    <div class="col"></div>
-                    <div class="col-6">
-                        <div class="frame" style="text-align: center;">
-                            LASTNAME : <input class="boxName" type="text" name="lastname" pattern="[A-Za-z].{6,}" title="Must contain at least 6 or more characters" required="">
-                        </div>
-                    </div>
-                    <div class="col"></div>      
-                </div>
-
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-6" style="text-align: center;">
-                        <div class="frame">
-                            EMAIL : <input class="boxMail" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="" title="Must contain correct email form.">
-                            <label style="color: red">${warning}</label>
-                        </div>
-                    </div>
-                    <div class="col"></div>      
-                </div>
-
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-6" style="text-align: center;">
-                        <div class="frame">
-                            PASSWORD : <input class="boxPass" id="pwd" type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-                                              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="">
-                            <button type="button" id="eye">
-                                <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png" alt="eye" />
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col"></div>      
-                </div>
-
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-6" style="text-align: center;">
-                        <div class="frame">
-                            PHONE : <input class="boxPhone" type="text" name="tel" pattern="[0-9]{10}" maxlength="10"  title="Must contain 10 Numbers" required="">
-                        </div>
-                    </div>
-                    <div class="col"></div>      
-                </div>
-
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-6" style="text-align: center;">
-                        <div class="frame">
-                            GENDER : <label class="container">Male
-                                <input type="radio" checked="checked" name="gender" value="male">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Female
-                                <input type="radio" name="gender" value="female">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col"></div>      
-                </div>
-
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-6" style="text-align: center;">
-                        <div class="frame">
-                            ADDRESS : <input class="boxAddr" type="text" name="address">
-                        </div>
-                    </div>
-                    <div class="col"></div>      
-                </div>
-
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-6" style="text-align: center;">
-                        <div class="frame">
-                            SCHOOL : <input class="boxSch" type="text" name="school" required="">
-                        </div>
-                    </div>
-                    <div class="col"></div>      
-                </div>
-            </form>
-
-
-            <br>
-            <div class="row">
-                <div class="col"></div>
-                <div class="col">
-                </div>
-
-                <div class="col-8" style="text-align: center;">
-
-                    <a href="Index.jsp">
-                        <input type="submit" value="CONFIRM" class="boxCon">
-                    </a>
-
-                    <a href="Signin.jsp">
-                        <input type="submit" value="CANCEL" class="boxCan">
-                    </a>
-
-                </div>
-            </div>
-        </div>
-
+        </form>
 
     </body>
 </html>
