@@ -14,22 +14,23 @@
     </head>
     <body>
         <h1>QUIZ</h1>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Subject</th>
-                    <th>Question</th>
-                </tr>
-            </thead>
-            
-            <tbody>
-                <c:forEach items="${quiz}" var="q">
-                    <tr>
-                        <td>${q.subject}</td>
-                        <td>${q.question}</td>
-                    </tr>
-                </c:forEach>
-            </tbody>
-        </table>
+        
+        <form action="Check" method="post">
+            <c:forEach items="${question}" var="q" varStatus="qvs">
+                <div class="row">
+                    <div class="col">
+                        <ol class="d">
+                            <c:forEach items="${q.answers}" var="x" varStatus="vs">
+                                <li>
+                                    <input type="radio" value="${x.choiceid}" name="ans${qvs.count}"/>${x.answer}
+                                </li>
+                            </c:forEach>
+                        </ol>
+                    </div>
+                    
+                </div>
+            </c:forEach>
+        </form>
+
     </body>
 </html>

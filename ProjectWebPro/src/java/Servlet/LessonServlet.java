@@ -44,32 +44,25 @@ public class LessonServlet extends HttpServlet {
                 List<Lesson> lessons = ljc.findLessonEntities() ;
                 request.setAttribute("topic", "All");
                 request.setAttribute("lesson", lessons);
-                getServletContext().getRequestDispatcher("/Quiz.jsp").forward(request, response);
+                response.sendRedirect("/ProjectWebPro/Quiz.jsp");
                 return ;
         } else{
                List<Lesson> lessons = ljc.findLessonEntities() ;
                List<Lesson> lessonAdd = new ArrayList(100);
+               
+               for(Lesson lessonSet : lessons){
+                   if(lessonSet.getSubject().equals(lesson)){
+                       lessonAdd.add(lessonSet);
+                   }
             }
-    }
-    
-    
-                List<Product> products = productJpaCtrl.findProductEntities();
-                List<Product> productAdd = new ArrayList<>();
-
-                for (Product productSet : products) {
-                    if (productSet.getProducttype().getProducttype().equals(catagorie)) {
-                        productAdd.add(productSet);
-                    }
-                }
-
-                request.setAttribute("topic", catagorie);
-                session.setAttribute("products", productAdd);
-                getServletContext().getRequestDispatcher("/shop.jsp").forward(request, response);
-                return;
-            }
+               request.setAttribute("topic", lesson);
+               session.setAttribute("lesson",lessonAdd);
+               response.sendRedirect("/ProjectWebPro/Quiz.jsp");
+               return;
+         }
         }
-        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-
+        getServletContext().getRequestDispatcher("/Index.jsp").forward(request, response);
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
