@@ -127,6 +127,14 @@
                             border-radius: 50%;
                             background: white;
                         }*/
+            .wrapper-class input[type="radio"] {
+                width: 30px;
+            }
+
+            .wrapper-class label {
+                display: inline;
+                margin-left: 5px;
+            }
 
         </style>
     </head>
@@ -199,16 +207,14 @@
 
                     <div class="row">
                         <div class="col"></div>
-                        <div class="col-6" style="text-align: center;">
+                        <div class="col-6" >
                             <div class="frame">
-                                GENDER : <label class="container">Male
-                                    <input type="radio" checked="checked" name="gender" value="male">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="container">Female
+                                <div class="wrapper-class">
+                                    GENDER :  <input type="radio" name="gender" value="male" checked>
+                                    <label for="radio1">Male</label>    
                                     <input type="radio" name="gender" value="female">
-                                    <span class="checkmark"></span>
-                                </label>
+                                    <label for="radio1">Female</label>
+                                </div>
                             </div>
                         </div>
                         <div class="col"></div>      
@@ -235,24 +241,24 @@
                     </div>
 
 
-                <br>
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col">
+                    <br>
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                        </div>
+
+                        <div class="col-8" style="text-align: center;">
+
+                            <a href="Index.jsp">
+                                <input type="submit" value="CONFIRM" class="boxCon">
+                            </a>
+
+                            <a href="Signin.jsp">
+                                <input type="submit" value="CANCEL" class="boxCan">
+                            </a>
+
+                        </div>
                     </div>
-
-                    <div class="col-8" style="text-align: center;">
-
-                        <a href="Index.jsp">
-                            <input type="submit" value="CONFIRM" class="boxCon">
-                        </a>
-
-                        <a href="Signin.jsp">
-                            <input type="submit" value="CANCEL" class="boxCan">
-                        </a>
-
-                    </div>
-                </div>
             </div>
         </form>
 
