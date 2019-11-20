@@ -34,6 +34,10 @@
                 width:20%;
                 margin : 10px;
             }
+            .cardBord{
+                transition: 0.3s;
+            }
+            .cardBord:hover {opacity: 0.5}
         </style>
     </head>
 
@@ -48,7 +52,6 @@
                     <li>
                         <a href="Index.jsp"><img src="images/male.png" style="vertical-align:middle; width: 30px;">Home</a>
                     </li>
-
                     <li>
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Subject</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -84,7 +87,6 @@
 
             <!-- Page Content  -->
             <div id="content">
-
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
                         <div class="col-4"></div>
@@ -95,8 +97,42 @@
                         </div>
                     </div>
                 </nav>
-            </div>
+                        
+                <!--card lesson-->
+                <div class="row">
+                    <div class="col-4">
+                        <a href="GetLesson?lessonid=MTH101">      
+                            <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; text-align: center;">
+                                <div class="card-body">
+                                    <h4 class="card-title">MTH101</h4>
+                                    <p class="card-text">Set</p>
+                                </div>
+                            </div>  
+                        </a>
+                    </div>
+                    
+                    <div class="col-4">
+                        <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; text-align: center;">
+                            <div class="card-body">
+                                <h4 class="card-title">MTH201</h4>
+                                <p class="card-text">Equation</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-4">
+                        <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; text-align: center;">
+
+                            <div class="card-body">
+                                <h4 class="card-title">MTH301</h4>
+                                <p class="card-text">Inequality</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                  
         </div>
+                        
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!-- Popper.JS -->

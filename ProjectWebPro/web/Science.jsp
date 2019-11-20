@@ -34,6 +34,11 @@
                 width:20%;
                 margin : 10px;
             }
+            
+            .cardBord{
+                transition: 0.3s;
+            }
+            .cardBord:hover {opacity: 0.5}
         </style>
     </head>
 
@@ -95,6 +100,39 @@
                         </div>
                     </div>
                 </nav>
+
+                <!--card lesson-->
+                <div class="row">
+                    <div class="col-4">
+                        <a href="GetLesson?lessonid=MTH101">      
+                            <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; text-align: center;">
+                                <div class="card-body">
+                                    <h4 class="card-title">SCI101</h4>
+                                    <p class="card-text">Biology</p>
+                                </div>
+                            </div>  
+                        </a>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; text-align: center;">
+                            <div class="card-body">
+                                <h4 class="card-title">SCI201</h4>
+                                <p class="card-text">Chemistry</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; text-align: center;">
+
+                            <div class="card-body">
+                                <h4 class="card-title">SCI301</h4>
+                                <p class="card-text">Astronomy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- jQuery CDN - Slim version (=without AJAX) -->
