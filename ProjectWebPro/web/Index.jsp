@@ -46,11 +46,12 @@
                 </div>
                 <ul class="list-unstyled components">
                     <li>
-                        <a href="Index.jsp"><img src="images/male.png" style="vertical-align:middle; width: 30px;">Home</a>
+                        <a href="Index.jsp"><img src="images/home.png" style="vertical-align:middle; width: 30px;"> Home</a>
                     </li>
 
                     <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Subject</a>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <img src="images/subject.png" style="vertical-align:middle; width: 30px;"> Subject</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
                                 <a href="Math.jsp">Mathematics</a>
@@ -74,10 +75,10 @@
                     </li>
 
                     <li>
-                        <a href="MyAccount.jsp">Profile</a>
+                        <a href="MyAccount.jsp"><img src="images/profile.png" style="vertical-align:middle; width: 30px;"> Profile</a>
                     </li>
                     <li>
-                        <a href="Signin.jsp">Logout</a>
+                        <a href="Signin.jsp"><img src="images/logout.png" style="vertical-align:middle; width: 30px;"> Logout</a>
                     </li>
                 </ul>
             </nav>

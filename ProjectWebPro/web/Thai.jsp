@@ -50,11 +50,12 @@
                 </div>
                 <ul class="list-unstyled components">
                     <li>
-                        <a href="Index.jsp"><img src="images/male.png" style="vertical-align:middle; width: 30px;">Home</a>
+                        <a href="Index.jsp"><img src="images/home.png" style="vertical-align:middle; width: 30px;"> Home</a>
                     </li>
 
                     <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Subject</a>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <img src="images/subject.png" style="vertical-align:middle; width: 30px;"> Subject</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
                                 <a href="Math.jsp">Mathematics</a>
@@ -78,10 +79,10 @@
                     </li>
 
                     <li>
-                        <a href="MyAccount.jsp">Profile</a>
+                        <a href="MyAccount.jsp"><img src="images/profile.png" style="vertical-align:middle; width: 30px;"> Profile</a>
                     </li>
                     <li>
-                        <a href="Signin.jsp">Logout</a>
+                        <a href="Signin.jsp"><img src="images/logout.png" style="vertical-align:middle; width: 30px;"> Logout</a>
                     </li>
                 </ul>
             </nav>
@@ -104,7 +105,7 @@
                 <div class="row">
                     <div class="col-4">
                         <a href="GetLesson?lessonid=MTH101">      
-                            <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; text-align: center;">
+                            <div class="card border-warning mb-3 cardBord" style="max-width: 20rem;">
                                 <div class="card-body">
                                     <h4 class="card-title">THA101</h4>
                                     <p class="card-text">Royal Word</p>
@@ -114,7 +115,7 @@
                     </div>
 
                     <div class="col-4">
-                        <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; text-align: center;">
+                        <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; ">
                             <div class="card-body">
                                 <h4 class="card-title">THA201</h4>
                                 <p class="card-text">Thai Proverb</p>
@@ -123,7 +124,7 @@
                     </div>
 
                     <div class="col-4">
-                        <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; text-align: center;">
+                        <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; ">
 
                             <div class="card-body">
                                 <h4 class="card-title">THA301</h4>
