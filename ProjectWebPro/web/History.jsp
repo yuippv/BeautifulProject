@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Index.jsp
-    Created on : Nov 14, 2019, 3:21:24 PM
-    Author     : yypsx
+    Document   : History
+    Created on : Nov 20, 2019, 3:53:16 PM
+    Author     : Acer
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -82,7 +82,6 @@
                 </ul>
             </nav>
 
-
             <!-- Page Content  -->
             <div id="content">
 
@@ -96,15 +95,6 @@
                         </div>
                     </div>
                 </nav>
-
-                <a href="GetLesson?lessonid=MTH101">
-                    <!-- Hover Content -->
-                    <div class="hover-content">
-                        <div class="line"></div>
-                        <p>MTH101</p>
-                        <h4>SET</h4>
-                    </div>
-                </a>
             </div>
         </div>
         <!-- jQuery CDN - Slim version (=without AJAX) -->
