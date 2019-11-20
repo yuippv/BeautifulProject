@@ -76,13 +76,22 @@
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Subject</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
-                                <a href="Math.jsp">Math</a>
+                                <a href="Math.jsp">Mathematics</a>
                             </li>
                             <li>
-                                <a href="#">Science</a>
+                                <a href="Science.jsp">Science</a>
                             </li>
                             <li>
-                                <a href="#">Page 3</a>
+                                <a href="Thai.jsp">Thai</a>
+                            </li>
+                            <li>
+                                <a href="English.jsp">English</a>
+                            </li>
+                            <li>
+                                <a href="Social.jsp">Social</a>
+                            </li>
+                            <li>
+                                <a href="History.jsp">History</a>
                             </li>
                         </ul>
                     </li>
