@@ -14,12 +14,21 @@
         <meta name="description" content="Colorlib Templates">
         <meta name="author" content="Colorlib">
         <meta name="keywords" content="Colorlib Templates">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css" >
+
+        <!-- Font Awesome JS -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
         <!-- Title Page-->
         <title>Y2S Register</title>
-
-        <!-- Font family-->
-        <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700,900&display=swap" rel="stylesheet">
 
         <!-- Main CSS-->
         <link href="css/main.css" rel="stylesheet" media="all">
@@ -33,8 +42,6 @@
 
             body{
                 background-color: #b3aad6;
-                font-family: 'Titillium Web', sans-serif;
-                font-weight: 700; 
             }
 
             .boxCon{
@@ -146,7 +153,7 @@
                         <div class="col"></div>
                         <div class="col-6">
                             <div class="frame" style="text-align: center; ">
-                                FIRSTNAME : <input class="boxName" type="text" name="firstname" pattern="[A-Za-z].{6,}" title="Must contain at least 6 or more characters" required="">
+                                FIRSTNAME : <input class="boxName" type="text" name="firstname" pattern="[A-Za-z].{,}"required="">
                             </div></div>
                         <div class="col">       
                         </div>
@@ -156,7 +163,7 @@
                         <div class="col"></div>
                         <div class="col-6">
                             <div class="frame" style="text-align: center;">
-                                LASTNAME : <input class="boxName" type="text" name="lastname" pattern="[A-Za-z].{6,}" title="Must contain at least 6 or more characters" required="">
+                                LASTNAME : <input class="boxName" type="text" name="lastname" pattern="[A-Za-z].{,}" required="">
                             </div>
                         </div>
                         <div class="col"></div>      
