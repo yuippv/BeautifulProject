@@ -99,7 +99,7 @@
                         </div>
                     </div>
                 </nav>
-                        
+
                 <!--card lesson-->
                 <div class="row">
                     <div class="col-4">
@@ -113,29 +113,33 @@
                             </div>  
                         </a>
                     </div>
-                    
-                    <div class="col-4">
-                        <div class="card border-warning mb-3 cardBord" style="max-width: 20rem;">
-                            <div class="card-body">
-                                <h4 class="card-title">MTH201</h4>
-                                <p class="card-text">Equation</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-4">
-                        <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; ">
 
-                            <div class="card-body">
-                                <h4 class="card-title">MTH301</h4>
-                                <p class="card-text">Inequality</p>
+                    <div class="col-4">
+                        <a href="GetLesson?lessonid=MTH201">      
+                            <div class="card border-warning mb-3 cardBord" style="max-width: 20rem;">
+                                <div class="card-body">
+                                    <h4 class="card-title">MTH201</h4>
+                                    <p class="card-text">Equation</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
+                    </div>
+
+                    <div class="col-4">
+                        <a href="GetLesson?lessonid=MTH301">      
+                            <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; ">
+
+                                <div class="card-body">
+                                    <h4 class="card-title">MTH301</h4>
+                                    <p class="card-text">Inequality</p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>                  
         </div>
-                        
+
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!-- Popper.JS -->
