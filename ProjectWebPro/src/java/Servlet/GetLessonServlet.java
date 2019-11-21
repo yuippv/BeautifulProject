@@ -36,7 +36,7 @@ public class GetLessonServlet extends HttpServlet {
         String lessonid = request.getParameter("lessonid");
         
         if(lessonid == null){
-           getServletContext().getRequestDispatcher("/LessonList?catagories=subject").forward(request, response);
+           getServletContext().getRequestDispatcher("/LessonList?catagories=Subject").forward(request, response);
         }else{
             LessonJpaController ljc = new LessonJpaController(utx, emf);
             Lesson lesson = ljc.findLesson(lessonid);
