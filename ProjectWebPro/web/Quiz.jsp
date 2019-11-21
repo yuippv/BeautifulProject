@@ -14,26 +14,8 @@
     </head>
     <body>
         <h1>QUIZ</h1>
-        
-        <form action="Check" method="post">
-            <c:forEach items="${Quiz}" var="q" varStatus="qvs">
-                <a href="GetQuestion?questionid=${q.questionid}">
-                    <h4>${q.question}</h4>
-                </a>
-<!--                <div class="row">
-                    <div class="col">
-                        <ol class="d">
-                            <c:forEach items="${q.answers}" var="x" varStatus="vs">
-                                <li>
-                                    <input type="radio" value="${x.choiceid}" name="ans${qvs.count}"/>${x.answer}
-                                </li>
-                            </c:forEach>
-                        </ol>
-                    </div>
-                    
-                </div>-->
-            </c:forEach>
-        </form>
+
+        ${Quiz}
 
     </body>
 </html>

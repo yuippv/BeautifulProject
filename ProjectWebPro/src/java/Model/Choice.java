@@ -28,10 +28,11 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Choice.findAll", query = "SELECT c FROM Choice c")
     , @NamedQuery(name = "Choice.findByChoiceid", query = "SELECT c FROM Choice c WHERE c.choiceid = :choiceid")
     , @NamedQuery(name = "Choice.findByQuestionid", query = "SELECT c FROM Choice c WHERE c.questionid = :questionid")
-    , @NamedQuery(name = "Choice.findByCorrectanswer", query = "SELECT c FROM Choice c WHERE c.correctanswer = :correctanswer")
+    , @NamedQuery(name = "Choice.findByIsright", query = "SELECT c FROM Choice c WHERE c.isright = :isright")
     , @NamedQuery(name = "Choice.findByChoice1", query = "SELECT c FROM Choice c WHERE c.choice1 = :choice1")
     , @NamedQuery(name = "Choice.findByChoice2", query = "SELECT c FROM Choice c WHERE c.choice2 = :choice2")
-    , @NamedQuery(name = "Choice.findByChoice3", query = "SELECT c FROM Choice c WHERE c.choice3 = :choice3")})
+    , @NamedQuery(name = "Choice.findByChoice3", query = "SELECT c FROM Choice c WHERE c.choice3 = :choice3")
+    , @NamedQuery(name = "Choice.findByChoice4", query = "SELECT c FROM Choice c WHERE c.choice4 = :choice4")})
 public class Choice implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -47,8 +48,8 @@ public class Choice implements Serializable {
     @Column(name = "QUESTIONID")
     private String questionid;
     @Size(max = 300)
-    @Column(name = "CORRECTANSWER")
-    private String correctanswer;
+    @Column(name = "ISRIGHT")
+    private String isright;
     @Size(max = 300)
     @Column(name = "CHOICE1")
     private String choice1;
@@ -58,6 +59,9 @@ public class Choice implements Serializable {
     @Size(max = 300)
     @Column(name = "CHOICE3")
     private String choice3;
+    @Size(max = 300)
+    @Column(name = "CHOICE4")
+    private String choice4;
 
     public Choice() {
     }
@@ -87,12 +91,12 @@ public class Choice implements Serializable {
         this.questionid = questionid;
     }
 
-    public String getCorrectanswer() {
-        return correctanswer;
+    public String getIsright() {
+        return isright;
     }
 
-    public void setCorrectanswer(String correctanswer) {
-        this.correctanswer = correctanswer;
+    public void setIsright(String isright) {
+        this.isright = isright;
     }
 
     public String getChoice1() {
@@ -117,6 +121,14 @@ public class Choice implements Serializable {
 
     public void setChoice3(String choice3) {
         this.choice3 = choice3;
+    }
+
+    public String getChoice4() {
+        return choice4;
+    }
+
+    public void setChoice4(String choice4) {
+        this.choice4 = choice4;
     }
 
     @Override

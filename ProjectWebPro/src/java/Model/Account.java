@@ -98,16 +98,6 @@ public class Account implements Serializable {
         this.school = school;
     }
 
-    public Account(String email, String password, String firstname, String lastname, String tel, String address, String school) {
-        this.email = email;
-        this.password = password;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.tel = tel;
-        this.address = address;
-        this.school = school;
-    }
-
     public String getEmail() {
         return email;
     }
