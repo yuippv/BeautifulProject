@@ -5,11 +5,13 @@
  */
 package Servlet;
 
+import Controller.QuizController;
 import Jpacontroller.QuizJpaController;
 import Model.Account;
 import Model.Quiz;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
 import javax.persistence.EntityManagerFactory;
@@ -36,15 +38,17 @@ public class QuizServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        HttpSession session = request.getSession();
-        Account account = (Account) session.getAttribute("account") ;
+       String lesson = request.getParameter("lessonid");
         
-        QuizJpaController qjc = new QuizJpaController(utx, emf) ;
-        List<Quiz> quiz = qjc.findQuizEntities() ;
-        if(quiz!=null){
-            request.setAttribute("quiz", quiz);
+         if(lesson !=null){       
+        String lessonid = (request.getParameter("lessonid"));
+        QuizController qc = new QuizController();
+        ArrayList<Models.Quiz> q = qc.findbyques(lessonid);
+             System.out.println("5555");
+             System.out.println(q);
+        request.getSession().setAttribute("ques", q);
+        getServletContext().getRequestDispatcher("/StartQuiz.jsp").forward(request, response);
         }
-        getServletContext().getRequestDispatcher("/Quiz.jsp").forward(request, response);
         
         
         
