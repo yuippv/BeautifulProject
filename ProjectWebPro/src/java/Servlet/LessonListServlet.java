@@ -46,7 +46,7 @@ public class LessonListServlet extends HttpServlet {
             if (catagorie.equalsIgnoreCase("Subject")) {
                 List<Lesson> lesson = ljc.findLessonEntities();
                 request.setAttribute("topic", "All");
-                session.setAttribute("lesson", lesson);
+                session.setAttribute("lessons", lesson);
                 getServletContext().getRequestDispatcher("/Subject.jsp").forward(request, response);
                 return;
             } else {
@@ -60,7 +60,7 @@ public class LessonListServlet extends HttpServlet {
                 }
 
                 request.setAttribute("topic", catagorie);
-                session.setAttribute("lesson", lessonAdd);
+                session.setAttribute("lessons", lessonAdd);
                 getServletContext().getRequestDispatcher("/Subject.jsp").forward(request, response);
                 return;
             }
