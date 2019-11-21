@@ -54,7 +54,10 @@
                             <img src="images/subject.png" style="vertical-align:middle; width: 30px;"> Subject</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
-                                <a href="Math.jsp">Mathematics</a>
+                                <a href="LessonList?catagories=Subject">ALL</a>
+                            </li>
+                            <li>
+                                <a href="LessonList?catagories=Mathematics">Mathematics</a>
                             </li>
                             <li>
                                 <a href="Science.jsp">Science</a>
