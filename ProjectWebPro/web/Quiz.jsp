@@ -14,11 +14,17 @@
     </head>
     <body>
         <h1>QUIZ</h1>
+        
+        
+        
+          
+        
+        
 
-                                    <p>${lesson.lessonid}</p>
+<!--                                    <p>${lesson.lessonid}</p>
                                     <a href="GetLesson?lessonid=${lesson.lessonid}">
                                         <h6>${lesson.lessonid}</h6>
-                                    </a>
+                                    </a>-->
 
     </body>
 </html>
