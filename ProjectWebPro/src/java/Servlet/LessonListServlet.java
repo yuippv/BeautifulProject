@@ -56,7 +56,6 @@ public class LessonListServlet extends HttpServlet {
                 for (Lesson lessonSet : lesson) {
                     if (lessonSet.getSubject().equals(catagorie)) {
                         lessonAdd.add(lessonSet);
-                                                System.out.println("jjujnun"+catagorie);
                     }
                 }
 
