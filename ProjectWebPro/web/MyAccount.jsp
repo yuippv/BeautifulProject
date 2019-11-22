@@ -78,22 +78,25 @@
                             <img src="images/subject.png" style="vertical-align:middle; width: 30px;"> Subject</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
-                                <a href="Math.jsp">Mathematics</a>
+                                <a href="LessonList?catagories=Subject">ALL</a>
                             </li>
                             <li>
-                                <a href="Science.jsp">Science</a>
+                                <a href="LessonList?catagories=MATHEMATICS">Mathematics</a>
                             </li>
                             <li>
-                                <a href="Thai.jsp">Thai</a>
+                                <a href="LessonList?catagories=SCIENCE">Science</a>
                             </li>
                             <li>
-                                <a href="English.jsp">English</a>
+                                <a href="LessonList?catagories=THAI">Thai</a>
                             </li>
                             <li>
-                                <a href="Social.jsp">Social</a>
+                                <a href="LessonList?catagories=ENGLISH">English</a>
                             </li>
                             <li>
-                                <a href="History.jsp">History</a>
+                                <a href="LessonList?catagories=SOCIAL">Social</a>
+                            </li>
+                            <li>
+                                <a href="LessonList?catagories=HISTORY">History</a>
                             </li>
                         </ul>
                     </li>
