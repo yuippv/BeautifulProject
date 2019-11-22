@@ -42,7 +42,7 @@
             <!-- Sidebar  -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>Y2S Academe</h3>
+                    <h3>Y2S Academy</h3>
                 </div>
                 <ul class="list-unstyled components">
                     <li>
@@ -63,16 +63,16 @@
                                 <a href="LessonList?catagories=SCIENCE">Science</a>
                             </li>
                             <li>
-                                <a href="Thai.jsp">Thai</a>
+                                <a href="LessonList?catagories=THAI">Thai</a>
                             </li>
                             <li>
-                                <a href="English.jsp">English</a>
+                                <a href="LessonList?catagories=ENGLISH">English</a>
                             </li>
                             <li>
-                                <a href="Social.jsp">Social</a>
+                                <a href="LessonList?catagories=SOCIAL">Social</a>
                             </li>
                             <li>
-                                <a href="History.jsp">History</a>
+                                <a href="LessonList?catagories=HISTORY">History</a>
                             </li>
                         </ul>
                     </li>
