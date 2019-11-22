@@ -57,10 +57,10 @@
                                 <a href="LessonList?catagories=Subject">ALL</a>
                             </li>
                             <li>
-                                <a href="LessonList?catagories=Mathematics">Mathematics</a>
+                                <a href="LessonList?catagories=MATHEMATICS">Mathematics</a>
                             </li>
                             <li>
-                                <a href="Science.jsp">Science</a>
+                                <a href="LessonList?catagories=SCIENCE">Science</a>
                             </li>
                             <li>
                                 <a href="Thai.jsp">Thai</a>
@@ -81,7 +81,7 @@
                         <a href="MyAccount.jsp"><img src="images/profile.png" style="vertical-align:middle; width: 30px;"> Profile</a>
                     </li>
                     <li>
-                        <a href="Signin.jsp"><img src="images/logout.png" style="vertical-align:middle; width: 30px;"> Logout</a>
+                        <a href="Signout"><img src="images/logout.png" style="vertical-align:middle; width: 30px;"> Logout</a>
                     </li>
                 </ul>
             </nav>
