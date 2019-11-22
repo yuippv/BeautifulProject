@@ -103,7 +103,7 @@
                             <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; ">
                                 <div class="card-body">
                                     <h4 class="card-title">${l.lessonid}</h4>
-                                    <p class="card-text">SET</p>
+                                    <p class="card-text">${l.lessondescription}</p>
                                 </div>
                             </div>  
 
