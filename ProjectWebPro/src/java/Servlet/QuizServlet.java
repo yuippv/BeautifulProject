@@ -39,6 +39,7 @@ public class QuizServlet extends HttpServlet {
             throws ServletException, IOException {
 
        String lesson = request.getParameter("lessonid");
+        System.out.println("jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj");
         
          if(lesson !=null){       
         String lessonid = (request.getParameter("lessonid"));
@@ -47,7 +48,7 @@ public class QuizServlet extends HttpServlet {
              System.out.println("5555");
              System.out.println(q);
         request.getSession().setAttribute("ques", q);
-        getServletContext().getRequestDispatcher("/StartQuiz.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/Quiz.jsp").forward(request, response);
         }
         
         
