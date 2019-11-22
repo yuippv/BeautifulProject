@@ -65,7 +65,7 @@
             <!-- Sidebar  -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>Y2S Academe</h3>
+                    <h3>Y2S Academy</h3>
                 </div>
 
                 <ul class="list-unstyled components">
