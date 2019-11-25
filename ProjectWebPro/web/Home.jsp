@@ -48,7 +48,7 @@
         <div>
             <div class="container">
                 <a href="Signin">
-                    <button type="button">WELCOME TO Y2S ACADEME !</button>
+                    <button type="button">WELCOME TO Y2S ACADEMY !</button>
 <!--                    <img src="images/fing.gif">-->
                 </a>
 
