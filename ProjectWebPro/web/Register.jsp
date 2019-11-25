@@ -91,7 +91,7 @@
                 border-radius:10px;
                 border: none;
                 height: 30px;
-                width: 80%;
+                width: 75%;
             }
 
             .boxPhone{
@@ -186,10 +186,9 @@
                             <div class="frame">
                                 PASSWORD : <input class="boxPass" id="pwd" type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                                                   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="">
-                                <input type="checkbox" onclick="myFunction()">Show Password
-                                 <button type="button" id="eye">
-                                            <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png" alt="eye" />
-                                        </button>
+                                <button type="button"onclick="myFunction()" id="eye">
+                                    <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png" alt="eye" />
+                                </button>
                             </div>
                         </div>
                         <div class="col"></div>      
