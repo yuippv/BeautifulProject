@@ -62,7 +62,6 @@ public class RegisterServlet extends HttpServlet {
                     response.sendRedirect("/ProjectWebPro/Register.jsp");
                     return;
                 }
-                
             }
             Account newAccount = new Account(email, password, firstname, lastname, gender, tel, address, school);
                 try {
