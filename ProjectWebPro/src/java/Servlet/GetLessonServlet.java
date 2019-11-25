@@ -5,10 +5,13 @@
  */
 package Servlet;
 
+import Controller.QuizController;
 import Jpacontroller.LessonJpaController;
 import Model.Lesson;
+import Models.Quiz;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.annotation.Resource;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
@@ -34,17 +37,29 @@ public class GetLessonServlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String lessonid = request.getParameter("lessonid");
-        
+        System.out.println(lessonid);
         if(lessonid == null){
            getServletContext().getRequestDispatcher("/LessonList?catagories=Subject").forward(request, response);
         }else{
-            LessonJpaController ljc = new LessonJpaController(utx, emf);
-            Lesson lesson = ljc.findLesson(lessonid);
-            request.setAttribute("lesson", lesson);
-                getServletContext().getRequestDispatcher("/Quiz.jsp").forward(request, response);
+      
+           
+     
+        QuizController qc = new QuizController();
+        ArrayList<Quiz> q = qc.findbyques(lessonid);
+             System.out.println("5555");
+             System.out.println(q);
+        request.getSession().setAttribute("ques", q);
+        getServletContext().getRequestDispatcher("/Quiz.jsp").forward(request, response);
+        }
+//            LessonJpaController ljc = new LessonJpaController(utx, emf);
+//            Lesson lesson = ljc.findLesson(lessonid);
+//            request.setAttribute("lesson", lesson);
+//            System.out.println(lesson);
+//                getServletContext().getRequestDispatcher("/Quiz.jsp").forward(request, response);
         }
         
-    }
+    
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
