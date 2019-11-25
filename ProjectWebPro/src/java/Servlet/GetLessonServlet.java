@@ -27,39 +27,30 @@ import javax.transaction.UserTransaction;
  */
 public class GetLessonServlet extends HttpServlet {
 
-   @PersistenceUnit (unitName="BeautifulProjectPU")
-   EntityManagerFactory emf ;
-   
-   @Resource
-   UserTransaction utx ;
-    
+    @PersistenceUnit(unitName = "BeautifulProjectPU")
+    EntityManagerFactory emf;
+
+    @Resource
+    UserTransaction utx;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String lessonid = request.getParameter("lessonid");
         System.out.println(lessonid);
-        if(lessonid == null){
-           getServletContext().getRequestDispatcher("/LessonList?catagories=Subject").forward(request, response);
-        }else{
-      
-           
-     
-        QuizController qc = new QuizController();
-        ArrayList<Quiz> q = qc.findbyques(lessonid);
-             System.out.println("5555");
-             System.out.println(q);
-        request.getSession().setAttribute("ques", q);
-        getServletContext().getRequestDispatcher("/Quiz.jsp").forward(request, response);
-        }
-//            LessonJpaController ljc = new LessonJpaController(utx, emf);
-//            Lesson lesson = ljc.findLesson(lessonid);
-//            request.setAttribute("lesson", lesson);
-//            System.out.println(lesson);
-//                getServletContext().getRequestDispatcher("/Quiz.jsp").forward(request, response);
-        }
-        
-    
+        if (lessonid == null) {
+            getServletContext().getRequestDispatcher("/LessonList?catagories=Subject").forward(request, response);
+        } else {
 
+            QuizController qc = new QuizController();
+            ArrayList<Quiz> q = qc.findbyques(lessonid);
+            System.out.println("5555");
+            System.out.println(q);
+            request.getSession().setAttribute("ques", q);
+            getServletContext().getRequestDispatcher("/Quiz.jsp").forward(request, response);
+        }
+
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
