@@ -18,13 +18,13 @@
             <c:forEach items="${ques}" var="q" varStatus="qvs">
                 <div>${qvs.count}. ${q.question} </div>
                 <c:forEach items="${q.choices}" var="c">
-                    <input type="radio" value="${c.choiceId}"/>${c.choice1}
+                    <input type="radio" value="${c.choiceId}" name="choice"/>${c.choice1}
                     <br>
-                    <input type="radio" value="${c.choiceId}"/>${c.choice2}
+                    <input type="radio" value="${c.choiceId}" name="choice"/>${c.choice2}
                     <br>
-                    <input type="radio" value="${c.choiceId}"/>${c.choice3}
+                    <input type="radio" value="${c.choiceId}" name="choice"/>${c.choice3}
                     <br>
-                    <input type="radio" value="${c.choiceId}"/>${c.choice4}
+                    <input type="radio" value="${c.choiceId}" name="choice"/>${c.choice4}
                     <br>
                 </c:forEach>
             </c:forEach>
