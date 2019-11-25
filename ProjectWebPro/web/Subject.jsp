@@ -108,8 +108,10 @@
                                     <a href="GetLesson?lessonid=${l.lessonid}">
                                     <h4 class="card-title">${l.lessonid}</h4>
                                     <p class="card-text">${l.lessondescription}</p>
+                                    
                                     </a>
                                 </div>
+                                    <img style="height: 200px; width: 100%; display: block;" src="images/picsubject/${l.lessonid}.jpg" alt="Card image">
                             </div>  
 
                         </div>
