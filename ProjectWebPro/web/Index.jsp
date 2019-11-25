@@ -94,7 +94,7 @@
                         <div class="col-4"></div>
                         <div class="col-4"></div>
                         <div class="col-4">
-                            <img src="images/male.png" class="profile" style="vertical-align:middle">
+                            <img src="images/${account.gender}.png" class="profile" style="vertical-align:middle">
                             <h3 class="helloName">Hello : ${account.firstname}</h3>
                         </div>
                     </div>
