@@ -32,8 +32,8 @@ public class Quiz {
     
     
     public Quiz(String questId, String questName) {
-        this.questionId = questionId;
-        this.question = question;
+        this.questionId = questId;
+        this.question = questName;
     }
 
     public String getQuestionId() {
@@ -57,11 +57,7 @@ public class Quiz {
         return "Question{" + "questionId=" + questionId + ", question=" + question + ", choices=" + choices + '}';
     }
 
-    public Quiz(int questId, String question, ArrayList<Choice> choices) {
-        this.questionId = questionId;
-        this.question = question;
-        this.choices = choices;
-    }
+    
 
     
     
