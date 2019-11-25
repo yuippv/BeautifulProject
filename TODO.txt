@@ -1,15 +1,3 @@
-MATHEMATICS : 1 , MTH
-SCIENCE : 2 , SCI  [ CHEMISTRY : CHE BIOLOGY : BIO PHYSICS : PHY ASTRONOMY : AST]
-THAI : 3 , THA
-HISTORY : 4 , HIS
-SOCIAL : 5 , SOC
-ENGLISH : 6 , ENG
-
-
---1.) Create Database and Connect
-
---2.) Create table ACCOUNT should have : firstname , lastname , gender, email , password , tel , address , school
-
 CREATE TABLE ACCOUNT(
 EMAIL VARCHAR(30) NOT NULL PRIMARY KEY,
 PASSWORD VARCHAR(20) NOT NULL,
@@ -20,10 +8,8 @@ TEL VARCHAR(10) NOT NULL,
 ADDRESS VARCHAR(350) NOT NULL,
 SCHOOL VARCHAR(50) NOT NULL);
 
-	INSERT INTO Y2S.ACCOUNT (EMAIL, PASSWORD, FIRSTNAME, LASTNAME,GENDER,TEL,ADDRESS,SCHOOL ) 
+	INSERT INTO y2s.ACCOUNT (EMAIL, PASSWORD, FIRSTNAME, LASTNAME,GENDER,TEL,ADDRESS,SCHOOL ) 
 VALUES ('y2s@hotmail.com', 'y2s12345', 'yayahyuisin', 'beautiful', 'girl', '191', 'KMUTT', 'KMUTT'); 
-
---3.) Create table Subject
 
 CREATE TABLE SUBJECT(
 SUBJECT VARCHAR(50) NOT NULL PRIMARY KEY);
@@ -35,8 +21,6 @@ INSERT INTO SUBJECT VALUES('HISTORY' );
 INSERT INTO SUBJECT VALUES('SOCIAL');
 INSERT INTO SUBJECT VALUES('ENGLISH');
 
---4.)Create table Lesson
-
 CREATE TABLE LESSON(
 LESSONID VARCHAR(10) NOT NULL PRIMARY KEY,
 LESSONNAME VARCHAR(40) NOT NULL,
@@ -44,95 +28,809 @@ SUBJECT VARCHAR(50) NOT NULL,
 LESSONDESCRIPTION VARCHAR(400));
 
 
-	INSERT INTO Y2S.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
-VALUES ('MTH101', 'SET', 'MATHEMATICS', 'SETTTTTTTTTTTT');
-
-alter table Lesson add
-CONSTRAINT Fk_Subject FOREIGN KEY (Subject) REFERENCES Subject (Subject) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---5.)Create table Quiz
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('MTH101', 'Set', 'MATHEMATICS', 'รวมข้อสอบวิชาคณิตศาสตร์ เรื่อง เซต');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('MTH201', 'Equation', 'MATHEMATICS', 'รวมข้อสอบวิชาคณิตศาสตร์ เรื่อง เรื่อง สมการ');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('MTH301', 'Inequality', 'MATHEMATICS', 'รวมข้อสอบวิชาคณิตศาสตร์ เรื่อง อสมการ');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('SCI101', 'Biology', 'SCIENCE', 'รวมข้อสอบวิชาวิทยาศาสตร์ เรื่อง ชีววิทยา');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('SCI201', 'Chemistry', 'SCIENCE', 'รวมข้อสอบวิชาวิทยาศาสตร์ เรื่อง เคมี');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('SCI301', 'Astronomy', 'SCIENCE', 'รวมข้อสอบวิชาวิทยาศาสตร์ เรื่อง ดาราศาสตร์');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('THA101', 'Royal Word', 'THAI', 'รวมข้อสอบวิชาภาษาไทย เรื่อง คำราชาศัพท์');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('THA201', 'Thai Proverb', 'THAI', 'รวมข้อสอบวิชาภาษาไทย เรื่อง สำนวน สุภาษิต คำพังเพย');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('THA301', 'Thai Synonyms', 'THAI', 'รวมข้อสอบวิชาภาษาไทย เรื่อง คำไวพจน์');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('HIS101', 'Historical Methods', 'HISTORY', 'รวมข้อสอบวิชาประวัติศาสตร์ เรื่อง วิธีการทางประวัติศาสตร์');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('HIS201', 'War', 'HISTORY', 'รวมข้อสอบวิชาประวัติศาสตร์ เรื่อง ความขัดแย้งในคริสต์ศตวรรษที่ 20');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('HIS301', 'Historical Development', 'HISTORY', 'รวมข้อสอบวิชาประวัติศาสตร์ เรื่อง พัฒนาการทางประวัติศาสตร์');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('SOC101', 'Religion', 'SOCIAL', 'รวมข้อสอบวิชาประวัติศาสตร์ เรื่อง ศาสนาสากล');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('SOC201', 'Geography', 'SOCIAL', 'รวมข้อสอบวิชาประวัติศาสตร์ เรื่อง ภูมิศาสตร์');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('SOC301', 'Economy', 'SOCIAL', 'รวมข้อสอบวิชาประวัติศาสตร์ เรื่อง เศรษฐศาสตร์');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('ENG101', 'Present Tense', 'ENGLISH', 'รวมข้อสอบภาษาอังกฤษ เรื่อง Present Simple Tense');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('ENG201', 'Past Tense', 'ENGLISH', 'รวมข้อสอบภาษาอังกฤษ เรื่อง Past Simple Tense ');
+INSERT INTO y2s.LESSON (LESSONID, LESSONNAME, SUBJECT, LESSONDESCRIPTION ) 
+VALUES ('ENG301', 'Future Tense', 'ENGLISH', 'รวมข้อสอบภาษาอังกฤษ เรื่อง Future Simple Tense ');
 
 CREATE TABLE QUIZ(
 QUESTIONID VARCHAR(10) NOT NULL PRIMARY KEY,
-SUBJECT VARCHAR(50) NOT NULL,
+SUBJECT VARCHAR(100) NOT NULL,
 LESSONID VARCHAR(10) NOT NULL,
 QUESTION VARCHAR(300));
-
-**Insert ....
-	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
-VALUES ('QM101', 'MATHEMATICS', 'MTH101', 'กำหนดให้ A,B และ C เป็นเซตที่มีความสัมพันธ์กันดังแผนภาพ ข้อใดถูกต้อง');
-
-	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
-VALUES ('QM102', 'MATHEMATICS', 'MTH101', 'ในการสำรวจความชอบในการดื่มชาเขียวและกาแฟของกลุ่มตัวอย่าง 32 คน พบว่า ผู้ชอบดื่มชาเขียวมี 18 คน ผู้ชอบดื่มกาแฟมี 16  คน ผู้ไม่ชอบดื่มชาเขียวและไม่ชอบดื่มกาแฟมี 8 คน จำนวนคนที่ชอบดื่มชาเขียวอย่างเดียวเท่ากับข้อใดต่อไปนี้ ');
-
-	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
-VALUES ('QM103', 'MATHEMATICS', 'MTH101', 'ให้ A เป็นเซตจำกัด และ B เป็นเซตอนันต์ ข้อความใดต่อไปนี้ไม่ถูกต้อง');
-
-	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
-VALUES ('QM104', 'MATHEMATICS', 'MTH101', 'ในการสอบของนักเรียนชั้นประถมศึกษากลุ่มหนึ่ง พบว่า มีผู้สอบผ่านวิชาต่างๆดังนี้ คณิตศาสตร์ 36 คน  , สังคมศึกษา 50 คน , ภาษาไทย 44 คน , คณิตศาสตร์และสังคมศึกษา 15 คน , ภาษาไทยและสังคม 12 คน , คณิตศาสตร์และภาษาไทย 7 คน , ทั้งสามวิชา 5 คน จำนวนผู้สอบผ่านอย่างน้อยหนึ่งวิชากี่คน');
-
-	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
-VALUES ('QM105', 'MATHEMATICS', 'MTH101', 'ให้ A และ B เป็นเซตซึ่ง n(A)=7, n(B)=4 และ n(A∩B)=3  ถ้า C=(A−B)∪(B−A) แล้ว n(P(C)) เท่ากับเท่าใด');
-
-	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
-VALUES ('QM106', 'MATHEMATICS', 'MTH101', 'ถ้า P(A) เป็นสับเซตของ P(B) โดยที่ A และ B เป็นเซตใดๆ และ n(X) เป็นจำนวนสมาชิกของเซตX แล้ว A และ B มีความสัมพันธ์กันอย่างไร');
-
-INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
-VALUES ('QM107', 'MATHEMATICS', 'MTH101', 'กำหนดให้เซต A,B,C เป็นเซตใดๆ และไม่ใช่เซตอนันต์ ถ้า A⊆ B และ B ⊆ C แล้ว จำนวนสมาชิกของเซตใดมีค่ามากที่สุด');
-
-	INSERT INTO Y2S.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
-VALUES ('QM108', 'MATHEMATICS', 'MTH101', 'ข้อใดถูกต้องเมื่อ A และ B เป็นเซตใดๆที่ไม่ใช่เซตว่าง');
-
---6.)Create table Choice
 
 CREATE TABLE CHOICE(
 CHOICEID VARCHAR(10) NOT NULL PRIMARY KEY,
 QUESTIONID VARCHAR(10) NOT NULL,
-CORRECTANSWER VARCHAR(300),
+IsRight VARCHAR(300),
 CHOICE1 VARCHAR(300),
 CHOICE2 VARCHAR(300),
-CHOICE3 VARCHAR(300)) ;
-
-	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
-VALUES ('CM101', 'QM101', 'A∩B⊂B∪C', '(A∩B)∪C', 'A∪C=B', 'A−B⊂C');
-
-	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
-VALUES ('CM102', 'QM102', '8', '6', '10', '12');
-
-	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
-VALUES ('CM103', 'QM103', 'มีเซตอนันต์ที่เป็นสับเซตของA', 'มีเซตจำกัดที่เป็นสับเซตของA', 'มีเซตจำกัดที่เป็นสับเซตของB', 'มีเซตอนันต์ที่เป็นสับเซตของB');
-
-	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
-VALUES ('CM104', 'QM104', '101', '105', '95', '108');
-
-	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
-VALUES ('CM105', 'QM105', 'n(P(C))=32', 'n(P(C))=50', 'n(P(C))=28', 'n(P(C))=83');
-
-	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
-VALUES ('CM106', 'QM106', 'A เป็นสับเซตของ B', 'B เป็นสับเซตของ A', 'A - B', 'n(A) = n(B)');
-
-	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
-VALUES ('CM107', 'QM107', 'A ∪ B ∪ C', 'A ∪ B', 'A ∪ C', 'B ∪ C');
-
-	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
-VALUES ('CM108', 'QM108', 'A∪(B∩ C) = (A∪ B)∩ ( A∪ C)', 'A ∪ B = {} ก็ต่อเมื่อ A ⊆ B', 'A - B = {x | x∈ A และ x∈ B}', ' A∩ B = {x | x∉ A และ x∈ B');
-
-	INSERT INTO Y2S.CHOICE (CHOICEID, QUESTIONID, CORRECTANSWER, CHOICE1, CHOICE2, CHOICE3 ) 
-VALUES ('CM109', 'QM109', '', '', '', '');
+CHOICE3 VARCHAR(300),
+CHOICE4 VARCHAR(300));
 
 
 
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM101', 'MATHEMATICS', 'MTH101', 'กำหนดให้ A,B และ C เป็นเซตที่มีความสัมพันธ์กันดังแผนภาพ ข้อใดถูกต้อง');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM102', 'MATHEMATICS', 'MTH101', 'ในการสำรวจความชอบในการดื่มชาเขียวและกาแฟของกลุ่มตัวอย่าง 32 คน พบว่า ผู้ชอบดื่มชาเขียวมี 18 คน ผู้ชอบดื่มกาแฟมี 16  คน ผู้ไม่ชอบดื่มชาเขียวและไม่ชอบดื่มกาแฟมี 8 คน จำนวนคนที่ชอบดื่มชาเขียวอย่างเดียวเท่ากับข้อใดต่อไปนี้ ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM103', 'MATHEMATICS', 'MTH101', 'ให้ A เป็นเซตจำกัด และ B เป็นเซตอนันต์ ข้อความใดต่อไปนี้ไม่ถูกต้อง');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM104', 'MATHEMATICS', 'MTH101', 'ในการสอบของนักเรียนชั้นประถมศึกษากลุ่มหนึ่ง พบว่า มีผู้สอบผ่านวิชาต่างๆดังนี้ คณิตศาสตร์ 36 คน  , สังคมศึกษา 50 คน , ภาษาไทย 44 คน , คณิตศาสตร์และสังคมศึกษา 15 คน , ภาษาไทยและสังคม 12 คน , คณิตศาสตร์และภาษาไทย 7 คน , ทั้งสามวิชา 5 คน จำนวนผู้สอบผ่านอย่างน้อยหนึ่งวิชากี่คน');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM105', 'MATHEMATICS', 'MTH101', 'ให้ A และ B เป็นเซตซึ่ง n(A)=7, n(B)=4 และ n(A∩B)=3  ถ้า C=(A−B)∪(B−A) แล้ว n(P(C)) เท่ากับเท่าใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM106', 'MATHEMATICS', 'MTH101', 'ถ้า P(A) เป็นสับเซตของ P(B) โดยที่ A และ B เป็นเซตใดๆ และ n(X) เป็นจำนวนสมาชิกของเซตX แล้ว A และ B มีความสัมพันธ์กันอย่างไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM107', 'MATHEMATICS', 'MTH101', 'กำหนดให้เซต A,B,C เป็นเซตใดๆ และไม่ใช่เซตอนันต์ ถ้า A⊆ B และ B ⊆ C แล้ว จำนวนสมาชิกของเซตใดมีค่ามากที่สุด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM108', 'MATHEMATICS', 'MTH101', 'ข้อใดถูกต้องเมื่อ A และ B เป็นเซตใดๆที่ไม่ใช่เซตว่าง');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM109', 'MATHEMATICS', 'MTH101', 'กำหนดให้ A={1,2,{1,2},{1,2,3}} ข้อใดต่อไปนี้ผิด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM110', 'MATHEMATICS', 'MTH101', 'กำหนดให้ A={0,1,2,{0,1,2}} และ P(A) แทนพาวเวอร์เซตของ A  พิจารณาข้อความต่อไปนี้ ก.  A∩P(A)={0,1,2} ข.  n(A−P(A))<n(P(A)−A ข้อใดต่อไปนี้เป็นจริง');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CM101', 'QM101','1', 'A∩B⊂B∪C', '(A∩B)∪C', 'A∪C=B', 'A−B⊂C');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM102', 'QM102','2', '8', '6', '10', '12');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM103', 'QM103','3', 'มีเซตอนันต์ที่เป็นสับเซตของA', 'มีเซตจำกัดที่เป็นสับเซตของA', 'มีเซตจำกัดที่เป็นสับเซตของB', 'มีเซตอนันต์ที่เป็นสับเซตของB');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CM104', 'QM104','4', '101', '105', '95', '108');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM105', 'QM105','1', 'n(P(C))=32', 'n(P(C))=50', 'n(P(C))=28', 'n(P(C))=83');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM106', 'QM106','2', 'A เป็นสับเซตของ B', 'B เป็นสับเซตของ A', 'A - B', 'n(A) = n(B)');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM107', 'QM107','3', 'A ∪ B ∪ C', 'A ∪ B', 'A ∪ C', 'B ∪ C');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM108', 'QM108','4', 'A∪(B∩ C) = (A∪ B)∩ ( A∪ C)', 'A ∪ B = {} ก็ต่อเมื่อ A ⊆ B', 'A - B = {x | x∈ A และ x∈ B}', ' A∩ B = {x | x∉ A และ x∈ B');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CM109', 'QM109','1', ' {1,2,3}⊂A', ' {1,2}∈A', ' {1,2}⊂A', ' {1,2,3}∈A ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM110', 'QM110','2', 'ก. ผิด และ ข. ถูก', ' ข. ผิด และ ก. ถูก', 'ก. ผิด และ ข. ผิด ', 'ก. ถูก และ ข. ถูก');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM201', 'MATHEMATICS', 'MTH201', 'ให้  a  และ  b  แทนจำนวนใดๆ  โดยที่  a  <  b ข้อใดต่อไปนี้เป็นจริง  1)  b - 9  >  a  -  9    2)  a - 1  <  b  - 1    3)  3 + a   <  b + 3   4)  -4 + b  >  a  -  4');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM202', 'MATHEMATICS', 'MTH201', 'ข้อใดเป็นคำตอบที่ถูกต้องของอสมการ 2 + 3t  <  5t  -  6  ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM203', 'MATHEMATICS', 'MTH201', 'เมื่อ x + 3 ≥ -1แล้ว x  เท่ากับเท่าไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM204', 'MATHEMATICS', 'MTH201', 'เมื่อ x +2 <  30 แล้ว x  เท่ากับเท่าไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM205', 'MATHEMATICS', 'MTH201', 'ข้อใดเป็นคำตอบที่ถูกต้องของอสมการ  3 + 2t  <  -7  ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM206', 'MATHEMATICS', 'MTH201', 'ข้อใดเป็นคำตอบที่ถูกต้องของอสมการ -1 - 8y  >  -2y + 5  ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM207', 'MATHEMATICS', 'MTH201', 'ข้อใดเป็นคำตอบที่ถูกต้องของอสมการ (x - 2)  +  2   ≤  2(x - 4)');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM208', 'MATHEMATICS', 'MTH201', 'ผลบวกของจำนวนจำนวนหนึ่งกับสามไม่น้อยกว่าสี่เท่าของจำนวนนั้นลบด้วยห้า เขียนเป็นสัญลักษณ์ได้ตรงกับข้อใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM209', 'MATHEMATICS', 'MTH201', 'สุดาภรณ์มีอายุแก่กว่าน้องสาว  5  ปี  อีก  7  ปีข้างหน้า ทั้งสองคนมีอายุรวมกันมากกว่า  40  ปี  อยากทราบว่า อายุของสุดาภรณ์เป็นอย่างไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM210', 'MATHEMATICS', 'MTH201', 'ประพจน์มีเหรียญอยู่ในกระเป๋าจำนวนหนึ่งเป็นเหรียญห้าบาทน้อยกว่าเหรียญบาทอยู่  15  เหรียญ  คิดเป็นจำนวนเงินมีเงินทั้งหมดมากกว่า  75  บาท อยากทราบว่ามีเหรียญห้าบาทในข้อใดถูกต้อง');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM201', 'QM201','4', 'ถูกต้องทุกข้อ', '1), 2), 3)', '2), 3), 4)', '1).2)');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM202', 'QM202','3', 't  >  4', 't  <  8', 't  > 8', 't < 4');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CM203', 'QM203','2', 'x ≥ 2', 'x ≥  1', 'x ≥ -2', 'x ≥ -1');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CM204', 'QM204','1', 'x < 32', 'x > 32', 'x < 30', 'x >30');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CM205', 'QM205','1', 't  <  -5', 't  <  5', 't  <  -15', 't  <  15');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM206', 'QM206','2', 'y  <  -1', 'y  <  -2', 'y  <  -3', 'y  <  -4');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM207', 'QM207','3', ' x ≤ 0 ', 'x ≤ 1', 'x ≤ 2', 'x ≤ 3');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CM208', 'QM208','4', 'a + 3  ≥  4(a – 5)', 'a + 3  ≠  4(a – 5)', 'a + 3   >   4(a – 5)', 'a + 3  ≤  4(a – 5)');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM209', 'QM209','3', 'สุดาภรณ์มีอายุมากกว่า 16  ปีขึ้นไป', 'สุดาภรณ์มีอายุ 16  ปี', 'สุดาภรณ์มีอายุ 16  ปี', 'สุดาภรณ์มีอายุตั้งแต่ 16  ปี');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM210', 'QM210','3', 'น้อยกว่า  9  เหรียญ', 'มากกว่า  11  เหรียญ', 'น้อยกว่า  11  เหรียญ', 'มากกว่า  10  เหรียญ');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM301', 'MATHEMATICS', 'MTH301', 'ข้อใดคือไม่ใช่วิธีการหาคำตอบของระบบสมการเชิงเส้นสองตัวแปร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM302', 'MATHEMATICS', 'MTH301', ' . ข้อใดเป็นระบบสมการเชิงเส้นเส้นสองตัวแปร(a/b หมายถึง เศษ a ส่วน b)');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM303', 'MATHEMATICS', 'MTH301', 'จงแก้ระบบสมการ x + y = 35 และ x = y – 7');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM304', 'MATHEMATICS', 'MTH301', 'จงแก้ระบบสมการ x + y = 56 และ y = x + 72');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM305', 'MATHEMATICS', 'MTH301', 'จงแก้ระบบสมการ y = 5x+70 และ 8x - 3y = -14');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM306', 'MATHEMATICS', 'MTH301', 'จงแก้ระบบสมการ x = -3y และ 7x – 2y = -69');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM307', 'MATHEMATICS', 'MTH301', 'จงแก้ระบบสมการ 3x - 7y = 2 และ x + 4y = 1');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM308', 'MATHEMATICS', 'MTH301', 'จงแก้ระบบสมการ x + y = 16 และ x - y = 28');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM309', 'MATHEMATICS', 'MTH301', 'จงแก้ระบบสมการ x + 20y = 160 และ -x + 60y = 160');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QM310', 'MATHEMATICS', 'MTH301', 'จงแก้ระบบสมการ x + 10y = 160 และ -x + 70y = 254');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM301', 'QM301','1', 'ถูกทุกข้อ', 'การใช้กราฟ', 'การแทนค่าตัวแปร', 'การกำจัดตัวแปร');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CM302', 'QM302','2', 'x + 4y = 52', 'xy = 27', 'x + 1/y = 12', 'x ยกกำลังสอง + y + 2 = 0');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CM303', 'QM303','2', '(14,21)', '(-21,14)', '(-14,21)', '(21,14)');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM304', 'QM304','3', '(8,64)', '(-8,64)', '(64,8)', '(-64,8)');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CM305', 'QM305','4', '(-28,-70)', '(28,70)', '(28,70)', '(-28,70)');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM306', 'QM306','4', '(9,-3)', '(9, 3)', '(-9,-3)', '(-9, 3)');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CM307', 'QM307','1', '(15/19 , 1/19)', '(-15/19 , -1/19)', '(-15/19 , 1/19)', '(15/19 , -1/19)');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CM308', 'QM308','2', '(22,-6)', '(-22,-6)', '(22,6)', '(-22, 6)');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CM309', 'QM309','4', '(80,4)', '(-80,4)', '(80,-4)', '(-80,-4)');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CM310', 'QM310','2', 'ไม่มีข้อถูก', '(2,-7)', '(-7,-2)', '(7,2)');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS101', 'SCIENCE', 'SCI101', 'ข้อใดเป็นสัตว์เลี้ยงลูกด้วยนม');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS102', 'SCIENCE', 'SCI101', 'ข้อใดเป็นสัตว์เลี้ยงลูกด้วยนม');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS103', 'SCIENCE', 'SCI101', 'สัตว์ข้อใดออกลูกเป็นตัว');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS104', 'SCIENCE', 'SCI101', 'สัตว์ข้อใดออกลูกเป็นไข่');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS105', 'SCIENCE', 'SCI101', 'ข้อใดไม่ใช่สัตว์เลี้ยงลูกด้วยนม');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS106', 'SCIENCE', 'SCI101', 'ข้อใดเป็นสัตว์กินพืช');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS107', 'SCIENCE', 'SCI101', 'ข้อใดเป็นสัตว์กินทั้งพืชและสัตว์');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS108', 'SCIENCE', 'SCI101', 'เหาฉลามกับฉลามอยู่ในภาวะอะไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS109', 'SCIENCE', 'SCI101', 'ข้อใดเป็นภาวะพึ่งพาอาศัยกัน');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS110', 'SCIENCE', 'SCI101', 'ข้อใดเป็นภาวะการได้รับประโยชน์ร่วมกัน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CS101', 'QS101','4', 'งู', 'คางคก', 'ฉลาม', 'วาฬ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS102', 'QS102','1', 'กวาง', 'กุ้ง', 'ไก่', 'กบ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CS103', 'QS103','2', 'ปลาไหล', 'ปลากัด', 'ปลาทู', 'ปลาช่อน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CS104', 'QS104','3', 'หมี', 'กระรอก', 'ตุ่นปากเป็ด', 'บีเวอร์');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CS105', 'QS105','1', 'เพนกวิน', 'หมีขั้วโลก', 'สิงโตทะเล','แมวน้ำ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CS106', 'QS106','2', 'เสือ', 'ช้าง', 'สิงโต', 'ไฮยีน่า');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS107', 'QS107','1', 'หมี', 'ม้า', 'วัว', 'ช้าง');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CS108', 'QS108','1', 'ภาวะปรสิต', 'ภาวะพึ่งพาอาศัยกัน', 'ภาวะอิงอาศัย', 'ภาวะล่าเหยื่อ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS109', 'QS109','4', 'แบคทีเรียในปมรากพืชตระกูลถั่ว', 'ราในรากพืชตระกูลสน', 'สาหร่ายสีเขียวแกมน้ำในแหนแดง', 'ถูกทุกข้อ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS110', 'QS110','4', 'นกเอี้ยงกับควาย', 'มดดำกับเพลี้ย', 'ปูเสฉวนกับดอกไม้ทะเล', 'ถูกทุกข้อ');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS201', 'SCIENCE', 'SCI201', 'แบบจำลองอะตอมของทอมสันประกอบด้วยอะไรบ้าง');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS202', 'SCIENCE', 'SCI201', 'ใครเป็นผู้ค้นพบอนุภาคนิวตรอน');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS203', 'SCIENCE', 'SCI201', 'ใครเป็นผู้คิดแบบจำลองอะตอมเป็นคนแรก');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS204', 'SCIENCE', 'SCI201', 'การแบ่งระดับพลังงานเป็นชั้นๆเป็นแบบจำลองอะตอมของใคร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS205', 'SCIENCE', 'SCI201', 'เลขอะตอมหมายถึงอะไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS206', 'SCIENCE', 'SCI201', 'ทอมสันใช้อะไรในการทดลองเพื่อสร้างแบบจำลองอะตอม');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS207', 'SCIENCE', 'SCI201', 'ใครใช้วิธีการทดลองโดยการยิงอนุภาคแอลฟาผ่านแผ่นทองคำ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS208', 'SCIENCE', 'SCI201', 'สัญลักษณ์นิวเคลียร์ที่ใช้ประกอบด้วยอะไรบ้าง');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS209', 'SCIENCE', 'SCI201', 'คำจำกัดความที่ว่ามีขนาดเล็กที่สุด ไม่สามารถแบ่งแยกได้อีก');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS210', 'SCIENCE', 'SCI201', 'แบบจำลองอะตอมในปัจจุบันเป็นแบบใด');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS201', 'QS201','1', 'โปรตอน อิเล็กตรอน', 'ธาตุ ประจุลบ', 'โปรตอน นิวตรอน', 'โปรตอน อิเล็กตรอน นิวตรอน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CS202', 'QS202','2', 'เจมส์ แซดวิก', 'ทอมสัน', 'มิลลิแกน', 'ฟาราเดย์');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CS203', 'QS203','3', 'ดอลตัน', 'นีลส์ โบรห์', 'รัทเธอร์ฟอร์ด', 'มิลลิแกน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS204', 'QS204','1', 'นีลส์ โบร์ห', 'ทอมสัน', 'รัทเธอร์ฟอร์ด', 'มิลลิแกน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS205', 'QS205','3', 'จำนวนโปรตอน', 'จำนวนอิเล็กตรอน', 'จำนวนนิวตรอน', 'จำนวนโปรตอนและนิวตรอน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS206', 'QS206','4', 'หลอดรังสีแคโทด', 'ภาพวาด', 'ไฮกรอมิเตอร์', 'หลอดแก้วรูปตัวยู');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS207', 'QS207','4', 'รัทเธอร์ฟอร์ด', 'เจมส์ แซดวิก', 'ทอมสัน', 'ฟาราเดย์');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4  ) 
+VALUES ('CS208', 'QS208','1', 'สัญลักษณ์ธาตุ เลขมวล เลขอะตอม', 'อะตอม โปรตอน', 'เลขมวล เลขอะตอม อิเล็กตรอน โปรตอน', 'เลขมวล เลขอะตอม');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS209', 'QS209','2', 'อะตอม', 'สารประกอบ', 'โมเลกุล', 'ธาตุ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS210', 'QS210','3', 'เป็นแบบกลุ่มหมอก', 'เป็นชั้นๆระดับพลังงาน', 'เป็นทรงกลม', 'ประกอบด้วยประจุบวกและประจุลบ');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS301', 'SCIENCE', 'SCI301', 'เตาไฟแช่แข็ง เป็นชื่อของดาวอะไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS302', 'SCIENCE', 'SCI301', 'ดาวศุกร์ มีอีกชื่อว่าอะไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS303', 'SCIENCE', 'SCI301', 'โลกเป็นดาวเคราะห์ชั้นในหรือดาวเคราะชั้นนอก');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS304', 'SCIENCE', 'SCI301', 'ดาวเคราะห์ที่พึ่งถูกค้นพบร่องรอยของอารยธรรมคือ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS305', 'SCIENCE', 'SCI301', 'ดาวเคราะห์ที่มีขนาดใหญ่ที่สุดคือ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS306', 'SCIENCE', 'SCI301', 'ดาวเคราะห์ที่มีน้ำหนักเบาที่สุดคือ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS307', 'SCIENCE', 'SCI301', 'ดาวเคราะห์ที่มีน้ำเป็นส่วนประกอบมากที่สุดคือ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS308', 'SCIENCE', 'SCI301', 'ดาวมฤตยู เป็นชื่อของดาวอะไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS309', 'SCIENCE', 'SCI301', 'จุดแดงยักษ์ เป็นชื่อของดาวอะไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QS310', 'SCIENCE', 'SCI301', 'ดาวที่สามารถใช้ดูทิศได้คือดาวอะไร');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS301', 'QS301','2', 'ดาวอังคาร', 'ดาวพุธ', 'โลก', 'ดาวศุกร์');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS302', 'QS302','1', 'ดาวศุกร์', 'ดาวศุกร์', 'ดาวพุธ', 'โลก');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS303', 'QS303','3', 'ดาวเคราะห์ชั้นนอก', 'ดาวเคราะห์ชั้นบน', 'ดาวเคราะห์ชั้นใน', 'ดาวเคราะห์ชั้นล่าง');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS304', 'QS304','4', 'โลก', 'ดาวศุกร์', 'ดาวพุธ', 'ดาวอังคาร');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS305', 'QS305','1', 'ดาวพฤหัสบดี', 'ดาวเนปจูน', 'ดาวเสาร์',  'ดาวยูเรนัส');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS306', 'QS306','1', 'ดาวเสาร์', 'ดาวพฤหัสบดี', 'ดาวเนปจูน', 'ดาวยูเรนัส');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS307', 'QS307','4', 'ดาวยูเรนัส', 'ดาวเสาร์', 'ดาวพฤหัสบดี', 'ดาวเนปจูน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS308', 'QS308','3', 'ดาวเสาร์',  'ดาวพฤหัสบดี', 'ดาวยูเรนัส', 'ดาวเนปจูน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS309', 'QS309','1', 'ดาวพฤหัสบดี', 'ดาวเนปจูน', 'ดาวเสาร์',  'ดาวยูเรนัส');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CS310', 'QS310','2', 'ดาวใต้', 'ดาวเหนือ', 'ดาวอีสาน', 'ดาวขำมิน');
 
 
 
 
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT101', 'THAI', 'THA101', 'ข้อใดหมายถึง ปอด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT102', 'THAI', 'THA101', 'ข้อใดหมายถึง น้ำ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT103', 'THAI', 'THA101', 'ข้อใดหมายถึง หัวเราะ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT104', 'THAI', 'THA101', 'ข้อใดหมายถึง ทาเครื่องหอม');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT105', 'THAI', 'THA101', 'ข้อใดหมายถึง ทักทายปราศรัย');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT106', 'THAI', 'THA101', 'ข้อใดหมายถึง เถ้ากระดูก');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT107', 'THAI', 'THA101', 'ข้อใดหมายถึง นิ้วชี้');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT108', 'THAI', 'THA101', 'ข้อใดหมายถึง แข้ง');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT109', 'THAI', 'THA101', 'ข้อใดหมายถึง ไหปลาร้า');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT110', 'THAI', 'THA101', 'ข้อใดหมายถึง พ่อตา');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT101', 'QT101','1', 'พระปับผาสะ', 'พระกรรเจียก', 'พระกัจฉะ', 'พระหนุ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT102', 'QT102','2', 'พระกุณฑลพาน', 'พระสุธารส', 'พระจุฑามณี', 'พระสนับเพลา');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT103', 'QT103','4', 'รับประทาน', 'เสด็จประพาส', 'ทรงพระสรวล', 'ถวายบังคม');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT104', 'QT104','3', 'ประชวร', 'ถวายบังคม', 'ทรงพระสำอาง', 'พระราชปุจฉา');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT105', 'QT105','3', 'พระราชทาน', 'ทรงพระสำอาง', 'พระราชปฏิสันถาร', 'พระราชหัตถเลขา');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT106', 'QT106','4', 'พระโมฬี ', 'พระอุทร', 'พระฉายา', 'พระอังคาร');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT107', 'QT107','1', 'พระดรรชนี', 'พระองคุลี' , 'พระขนอง', 'พระกฤษฎี');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT108', 'QT108','2', 'พระโสณี', 'พระชงฆ์ ', 'พระนลาฎ', 'พระนาภี');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT109', 'QT109','1', 'พระรากขวัญ', 'มูลพระชิวหา', 'พระอังสะ', 'พระเสโท');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT110', 'QT110','1', 'พระสัสสุระ', 'พระเทวัน ', 'พระปิตุจฉา', 'พระเชษฐา');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT201', 'THAI', 'THA201', 'ใช้จ่ายเงินสุรุ่ยสุร่าย ไม่ประหยัด ไม่เก็บหอมรอมริบ ตรงกับสำนวนสุภาษิตไทยในข้อใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT202', 'THAI', 'THA201', 'บุคคลที่ถูกใคร ๆ รุมใช้อยู่คนเดียว ตรงกับสำนวนสุภาษิตไทยในข้อใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT203', 'THAI', 'THA201', 'เอาความลับหรือเอาเรื่องที่ทำกันที่ลับมาเปิดเผยให้คนเขารู้ ตรงกับสำนวนสุภาษิตไทยในข้อใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT204', 'THAI', 'THA201', 'มีรายได้ไม่พอกับรายจ่าย ตรงกับสำนวนสุภาษิตไทยในข้อใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT205', 'THAI', 'THA201', 'คนที่มีสิ่งที่ตัวเองใช้ประโยชน์ไม่ได้ มักใช้คู่กับ หัวล้านได้หวี ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT206', 'THAI', 'THA201', 'มานะพยายามทำงานทุกอย่างเพื่อปากท้อง โดยไม่ห่วงคำนึงถึงความลำบาก มีความหมายว่าอะไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT207', 'THAI', 'THA201', ' อาการหลบไปมาเพื่อไม่ให้พบตรงกับสำนวนสุภาษิตไทยในข้อใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT208', 'THAI', 'THA201', ' ถามอย่างหนึ่ง ตอบไปอีกอย่างหนึ่ง ตรงกับสำนวนสุภาษิตไทยในข้อใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT209', 'THAI', 'THA201', 'ทำอะไรก็ตาม ผลร้ายย้อนกลับมาสู่ตัวเอง ตรงกับสำนวนสุภาษิตไทยในข้อใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT210', 'THAI', 'THA201', 'เสียทรัพย์โดยไม่ได้รับประโยชน์อะไร ตรงกับสำนวนสุภาษิตไทยในข้อใด');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT201', 'QT201','4', 'กระดี่ได้น้ำ', 'กบในกะลาครอบ', 'กงเกวียนกำเกวียน', 'กระเชอก้นรั่ว');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT202', 'QT202','1', 'กระโถนท้องพระโรง', 'เกลือเป็นหนอน', 'แกว่งเท้าหาเสี้ยน', 'ไกลปืนเที่ยง');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT203', 'QT203','3', 'กระต่ายหมายจันทร์', 'เกลือเป็นหนอน', 'กินที่ลับไขที่แจ้ง', 'กินบนเรือนขี้บนหลังคา');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT204', 'QT204','2', 'ซื้อควายหน้านา ซื้อผ้าหน้าตรุษ (หน้าหนาว)', 'ชักหน้าไม่ถึงหลัง', 'ผัวหาบ เมียคอน', 'ชี้นกบนปลายไม้');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT205', 'QT205','1', 'มะกอกสามตะกร้าปาไม่ถูก', 'วัวใครเข้าคอกคนนั้น', 'สวรรค์อยู่ในอก นรกอยู่ในใจ', 'ผีซ้ำด้ำพลอย');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT206', 'QT206','3', 'เอามะพร้าวห้าวไปขายสวน', 'หัวมังกุ ท้ายมังกร', 'เอามือซุกหีบ', 'หนังหน้าไฟ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT207', 'QT207','3', 'ละเลงขนมเบื้องด้วยปาก', 'ไม่หลักปักไม้เลน', 'เล่นเอาเถิดเจ้าล่อ', 'พูดเป็นต่อยหอย');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT208', 'QT208','4', 'คอหอยกับลูกกระเดือก', 'ขุดด้วยปาก ถากด้วยตา', 'คบคนให้ดูหน้า ซื้อผ้าให้ดูเนื้อ', 'ไปไหนมา สามวาสองศอก');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT209', 'QT209','2', 'น้ำท่วมทุ่ง ผักบุ้งโหรงเหรง', 'ขว้างงูไม่พ้นคอ', 'เส้นผมบังภูเขา', 'เหยียบเรือสองแคม');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT210', 'QT210','1', 'ตำน้ำพริกละลายแม่น้ำ', 'กำขี้ดีกว่ากำตด', 'กระต่ายขาเดียว', 'จับแพะชนแกะ');
 
 
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT301', 'THAI', 'THA301', 'คำในข้อใดมีความหมายว่า ลม');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT302', 'THAI', 'THA301', 'คำในข้อใดมีความหมายว่า ดอกบัว');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT303', 'THAI', 'THA301', 'คำในข้อใดมีความหมายว่า นก');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT304', 'THAI', 'THA301', 'คำในข้อใดมีความหมายว่า น้ำ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT305', 'THAI', 'THA301', 'คำในข้อใดมีความหมายว่า พระจันทร์');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT306', 'THAI', 'THA301', 'คำในข้อใดมีความหมายว่า พระอาทิตย์');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT307', 'THAI', 'THA301', 'คำในข้อใดมีความหมายว่า แผ่นดิน');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT308', 'THAI', 'THA301', 'คำในข้อใดมีความหมายว่า ไฟ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT309', 'THAI', 'THA301', 'คำในข้อใดมีความหมายว่า ดอกไม้');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QT310', 'THAI', 'THA301', 'คำในข้อใดมีความหมายว่า ผู้หญิง');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT301', 'QT301','4', 'พระเพื่อน', 'พระแพง', 'พะแนง', 'พระพาย');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT302', 'QT302','1', 'ปทุม', 'ประเทือง', 'ประทาย', 'ประทีป');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT303', 'QT303','2', 'วิหาร', 'วิหค', 'วิรา', 'วิวาฬ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT304', 'QT304','1', 'ธารา', 'ธาดา', 'ธนา', 'ธวา');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT305', 'QT305','4', 'แถง', 'เถง', 'ถงำ', 'ไถง');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT306', 'QT306','2', 'ตะบัน', 'ตะวัน', 'ตระงัน', 'ตะเภา');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT307', 'QT307','3', 'ปฐวี', 'ปฐมา', 'ปฐพี', 'ปฐนี');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT308', 'QT308','4', 'อัคคา', 'อัคคอ', 'อัคคู', 'อัคคี');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT309', 'QT309','2', 'มารี', 'มาลา', 'มารวย', 'มาเล');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CT310', 'QT310','1', 'นารี', 'นารา', 'นานา', 'นาวา');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH101', 'HISTORY', 'HIS101', 'นักประวัติศาสตร์ใช้เกณฑ์อะไรแบ่งยุคสมัยทางประ วัติศาสตร์ออกเป็นสมัยก่อนประวัติศาสตร์ และสมัย ประวัติศาสตร์ ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH102', 'HISTORY', 'HIS101', 'ข้อใดต่อไปนี้เป็นหลักฐานชั้นต้น');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH103', 'HISTORY', 'HIS101', 'หลักฐานข้อใดต่างจากพวก');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH104', 'HISTORY', 'HIS101', 'งานเขียนทางประวัติศาสตร์ที่บันทึกเรื่องราวเกี่ยว กับพระมหากษัตริย์ จัดเป็นหลักฐานประเภทใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH105', 'HISTORY', 'HIS101', 'กฎหมายที่รัชกาลที่ 1 โปรดเกล้าฯ ให้ช าระขึ้น เรียกว่าอะไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH106', 'HISTORY', 'HIS101', '“เมื่อ พ.ศ. 2475 เกิดเหตุการณ์อะไรขึ้น” สมชาย ค้นหาข้อมูลจากหนังสือที่ห้องสมุดและอินเทอร์เน็ต เพื่อตอบค าถามดังกล่าว การกระท าของสมชายอยู่ ในขั้นตอนใดของวิธีการทางประวัติศาสตร์ ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH107', 'HISTORY', 'HIS101', '“วัฒนธรรม มีความสำคัญอย่างไร” อยู่ในขั้นตอน ใดของวิธีการทางประวัติศาสตร์');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH108', 'HISTORY', 'HIS101', 'เมื่อมีการตรวจสอบ และประเมินคุณค่าของหลัก ฐานแล้ว ขั้นตอนต่อไปจะท าอย่างไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH109', 'HISTORY', 'HIS101', 'ข้อใดเป็นวิธีการทางประวัติศาสตร์ที่แตกต่างจากวิธี การทางวิทยาศาสตร์');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH110', 'HISTORY', 'HIS101', 'ถ้าวิธีการทางวิทยาศาสตร์เป็นสรุปผลการทดลองเป็นข้อความรู้ วิธีการทางประวัติศาสตร์ คืออะไร ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH101', 'QH101','4', 'การตั้งถิ่นฐาน', 'ข้อมูลเครื่องใช้', 'ตำนานหรือคำบอกเล่า', 'หลักฐานที่เป็นลายลักษณ์อักษร');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH102', 'QH102','4', 'วิทยานิพนธ์', 'หนังสือเรียน', 'อนุสาวรีย์ชัยสมรภูมิ', 'หนังสือพิมพ์รายวัน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH103', 'QH103','3',  'จารึก', 'พระราชพงศาวดาร','จดหมายเหตุ', 'จิตรกรรมฝาผนัง');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH104', 'QH104','1', 'จดหมายส่วนตัว', 'จดหมายเหตุ', 'ตำนาน', 'พระราชพงศาวดาร');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH105', 'QH105','2', 'กฎหมายอาญา', 'กฎหมายตราสามดวง', 'กฎหมายรัฐธรรมนูญ', 'กฎหมายมนูธรรมศาสตร์');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH106', 'QH106','3', 'การตีความหลักฐาน', 'การนำเสนอ', 'การรวบรวมหลักฐาน', 'การกำหนดปัญหา');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH107', 'QH107','1', 'การนำเสนอ', 'การตีความหลักฐาน', 'การรวบรวมหลักฐาน', 'การกำหนดปัญหา');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH108', 'QH108','4', 'การกำหนดปัญหา', 'การตีความหลักฐาน', 'การนำเสนอ', 'ตีความหลักฐาน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH109', 'QH109','1', 'ตรวจสอบ ประเมินค่า และ ตีความหลักฐาน', 'กำหนดเรื่องจะศึกษา', 'การตีความเพื่อตอบปัญหา', 'การค้นหาหลักฐานข้อมูล');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH110', 'QH110','2', 'การกำหนดปัญหา', 'การเรียบเรียงและนำเสนอ', 'การตีความเพื่อตอบปัญหา', 'ตีความหลักฐาน');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH201', 'HISTORY', 'HIS201', 'ข้อใดไม่ใช่สาเหตุที่ท าให้เกิดสงครามโลกครั้งที่ 1 ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH202', 'HISTORY', 'HIS201', 'ประเทศใดอยู่ในกลุ่มประเทศสนธิสัญญาพันธมิตร ไตรภาคี');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH203', 'HISTORY', 'HIS201', 'ปัญหาข้อใดไม่ใช่ผลฃทางสังคมของสงครามโลก ครั้งที่ 1 ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH204', 'HISTORY', 'HIS201', 'ข้อใดไม่ใช่สาเหตุที่ท าให้เกิดสงครามโลกครั้งที่ 2 ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH205', 'HISTORY', 'HIS201', 'ข้อใดต่อไปนี้สัมพันธ์กับสงครามเย็น');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH206', 'HISTORY', 'HIS201', 'องค์การใดใช้แก้ปัญหากรณีพิพาทระหว่างประเทศ โดยสันติวิธีเพื่อด ารงรักษาสันติภาพอย่างถาวร ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH207', 'HISTORY', 'HIS201', 'หน่วยงานใดขององค์การสหประชาชาติมีหน้าที่ดูแล ความมั่นคง และตัดสินวินิจฉัยข้อพิพาทขัดแย้งของ ประเทศสมาชิก');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH208', 'HISTORY', 'HIS201', 'ข้อใดหมายถึงองค์การที่จัดตั้งขึ้นเพื่อความร่วมมือ ทางการทหารส าหรับถ่วงดุลอ านาจกับฝ่ายคอมมิว นิสต์');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH209', 'HISTORY', 'HIS201', 'ข้อตกลงทั่วไปว่าด้วยภาษีศุลกากรและการค้า หรือ แกตต์ ได้พัฒนาเป็นองค์การใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH210', 'HISTORY', 'HIS201', ' OPEC หมายถึงข้อใด');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH201', 'QH201','1', 'ความต่างทางสังคม และวัฒนธรรม', 'ลัทธิชาตินิยม', 'การสะสมอาวุธ', 'ลัทธิจักรวรรดินิยม');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH202', 'QH202','3', 'รัสเซีย', 'อังกฤษ', 'อิตาลี', 'ฝรั่งเศส');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH203', 'QH203','2', 'ปัญหาชุมชนพลัดถิ่น', 'ปัญหาการจ่ายค่าปฏิกรรมสงครามของฝ่ายที่แพ้', 'ปัญหาผู้บาดเจ็บทุพพลภาพ', 'ปัญหาคนหวาดกลัวภัยสงคราม');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH204', 'QH204','2', 'ลัทธิชาตินิยม', 'การลุกฮือของสมาชิกองค์กรสันนิบาตชาติ', 'ลัทธิจักรวรรดินิยม', 'มหาอำนาจแตกแยกเป็น2ฝ่าย');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH205', 'QH205','2',  'สงครามศาสนา','สงครามตัวแทน', 'สงครามกลางเมือง', 'สงครามแบ่งแยกดินแดน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH206', 'QH206','3', 'องค์การสหประชาชาติ', 'องค์การสนธิสัญญาวอร์ซอร์', 'องค์การสันนิบาติชาติ', 'องค์การสนธิสัญญาแอตแลนติก');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH207', 'QH207','4', 'สมัชชาใหญ่', 'ศาลยุติธรรมระหว่างประเทศ', 'คณะมนตรีเศรษฐกิจและสังคม', 'คณะมนตรีความมั่นคง');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH208', 'QH208','2', 'องค์การสันนิบาติชาติ', 'องค์การสนธิสัญญาแอตแลนติก', 'องค์การสหประชาชาติ', 'องค์การสนธิสัญญาวอร์ซอร์');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH209', 'QH209','2',  'ธนาคารโลก','องค์การการค้าโลก', 'สมาคมการค้าเสรียุโรป', 'กองทุนการเงินระหว่างประเทศ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH210', 'QH210','1', 'องค์การกลุ่มประเทศผู้ส่งออกปิโตรเลียม', 'องค์การการค้าโลก', 'ธนาคารโลก', 'สมาคมการค้าเสรียุโรป');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH301', 'HISTORY', 'HIS301', 'ทวีปใดที่มีขนาดเล็กที่สุด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH302', 'HISTORY', 'HIS301', 'ชนเผ่าพื้นเมืองของออสเตรเลียเรียกว่าอะไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH303', 'HISTORY', 'HIS301', 'ชนพื้นเมืองของชาวนิวซีแลนด์ คือข้อใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH304', 'HISTORY', 'HIS301', 'ข้อใดหมายถึงแหล่งอารยธรรมในทวีปยุโรป ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH305', 'HISTORY', 'HIS301', 'ในคริสต์ศตวรรษที่ 20 ประเทศมหาอ านาจยุโรป เกิดความขัดแย้งกัน มีสาเหตุมาจากอะไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH306', 'HISTORY', 'HIS301', 'อารยธรรมของชาวมายาอยู่ในทวีปอะไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH307', 'HISTORY', 'HIS301', 'ผู้นำการปฏิรูปคริสต์ศาสนาในทวีปยุโรปคือใคร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH308', 'HISTORY', 'HIS301', 'สงครามกลางเมืองในสหรัฐอเมริกาช่วย ค.ศ. 1861 – 1865 มีสาเหตุมาจากความขัดแย้งในเรื่องอะไร ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH309', 'HISTORY', 'HIS301', 'ชนพื้นเมืองที่ปัจจุบันอาศัยอยู่ในประเทศแคนาดา และรัฐแลสกา คือชนกลุ่มใด ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QH310', 'HISTORY', 'HIS301', 'ในช่วงคริสต์ศตวรรษที่ 15 – 16 สเปน และโปรตุ เกส เกินทางมาทวีปอเมริการใต้เพื่ออะไร');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH301', 'QH301','1', 'ทวีปออสเตรเลีย', 'ทวีปเอเชีย', 'ทวีปแอฟริกา', 'ทวีปอเมริกาเหนือ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH302', 'QH302','1', 'แอบอริจินี', 'มูแลตโต', 'อินเดียน', 'เมสติโช');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH303', 'QH303','3', 'เมารี', 'อินคา', 'แอชเต็ก', 'อินเดียน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH304', 'QH304','4', 'อารยธรรมกรีก-โรมัน', 'อารยธรรมลุ่มแม่น้ำไนล์', 'อารยธรรมอียิปต์', 'อารยธรรมเมโสโปเตเมีย');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH305', 'QH305','4', 'ถูกต้องทุกข้อ', 'ลัทธิชาตินิยม', 'ปัญหาการเมือง', 'แย่งดินแดนอาณานิคมต่างๆ ทั่วโลก');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH306', 'QH306','2', 'ทวีปอเมริกาเหนือ', 'ทวีปเอเชีย', 'ทวีปแอฟริกา', 'ทวีปอเมริกาใต้');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH307', 'QH307','1', 'มาร์ติน ลูเธอร์', 'อเมริโก เวสปุชชี', 'บาร์โทโลมิว ดีอีส', 'คริสโตเฟอร์ โคลัมบัส');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH308', 'QH308','2', 'การยกเลิกทาส', 'การตั้งรัฐบาลกลาง', 'การประกาศเอกราช', 'การปฏิบัติอุตสาหกรรม');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH309', 'QH309','3', 'เอสกิโม', 'เมสติโซ', 'อินเดียน', 'มูแลตโต');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CH310', 'QH310','1', 'ต้องการทองคำเงิน', 'ต้องการสินค้าเกษตร', 'ต้องการล่าอาณานิคม', 'ต้องการขายแหล่งที่อยู่อาศัย');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC101', 'SOCIAL', 'SOC101', 'เพราะเหตุใด พระพุทธองค์จึงทรงตัดสินพระทัยแสดง ปฐมเทศนาแก่ปัญจวัคคีย์ ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC102', 'SOCIAL', 'SOC101', 'พระพุทธเจ้าทรงแสดงธรรมในข้อใดที่แสดงถึงการ ทบทวนผลงานของธรรมทูตชุดแรกและปฐมนิเทศ ธรรมทูตคณะใหม่');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC103', 'SOCIAL', 'SOC101', 'เพราะเหตุใด พระพุทธเจ้าจึงทรงแต่งตั้งให้พระสารีบุตร และพระโมคคัลลานะเป็นอัครสาวกเบื้องขวาและ เบื้องซ้าย');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC104', 'SOCIAL', 'SOC101', 'พระพุทธรูปปางใดที่เป็นสัญลักษณ์แสดงว่า พระพุทธเจ้า ทรงสามารถเอาชนะกิเลสทั้งปวงได้');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC105', 'SOCIAL', 'SOC101', 'พระพุทธรูปปางแสดงปฐมเทศนาให้ข้อคิดสำคัญ เกี่ยวกับอะไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC106', 'SOCIAL', 'SOC101', 'พระพุทธเจ้าทรงแต่งตั้งพระเขมาเถรีเป็นเอตทัคคะ ด้านใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC107', 'SOCIAL', 'SOC101', 'ข้อใดเป็นคุณธรรมอันเป็นแบบอย่างของพระอัญญาโกณฑัญญะ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC108', 'SOCIAL', 'SOC101', 'พระอัญญาโกณฑัญญะเป็นผู้ที่ได้รับการยกย่อง จากพระพุทธเจ้าว่า เป็นเอตทัคคะในด้านใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC109', 'SOCIAL', 'SOC101', 'พระนางมหาปชาบดีโคตมีเถรีเข้ามาบวชในพระพุทธศาสนาด้วยการรับหลักปฏิบัติในข้อใด ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC110', 'SOCIAL', 'SOC101', 'คุณธรรมอันควรถือเป็นแบบอย่างของพระเขมาเถรี คือข้อใด ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC101', 'QC101','3', 'ต้องการให้เป็นสักขีพยานแห่งการตรัสรู้ และแก้ความเข้าใจผิดว่าการทรมานตนด้วย การอดอาหารไม่ใช่ทางบรรลุถึงนิพพาน', 'ทรงมองเห็นการณ์ไกลในผลของการเผยแผ่ พระพุทธศาสนาให้กว้างขวางไปในดินแดนต่างๆ ', 'ต้องการเทศนาสั่งสอนให้ปัญจวัคคีย์มีความเข้าใจ ในธรรมะที่ถูกต้องด้วยพระองค์เอง', 'ปัญจวัคคีย์เคยปรนนิบัติรับใช้พระพุทธองค์ เป็นระยะเวลานาน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC102', 'QC102','1', 'โอวาทปาฏิโมกข์', 'ธัมมจักกัปปวัตตนสูตร', 'มรรคมีองค์ 8', 'อริยสัจ 4');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC103', 'QC103','2', 'ต้องการให้ผู้ที่มีความสามารถช่วยในการเผยแผ่ พระพุทธศาสนา', 'ได้รับคำแนะน าจากพระสงฆ์สาวกส่วนใหญ่ ', 'พระสารีบุตรและพระโมคคัลลานะปรนนิบัติรับใช้ พระพุทธเจ้า', 'พระพุทธองค์เห็นว่า ทั้งพระสารีบุตรและ พระโมคคัลลานะเป็นผู้มีความเพียรอย่างสูง');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC104', 'QC104','1', 'ปางมารวิชัย', 'ปางลีลา', 'ปางประจ าวันเกิด', 'ปางแสดงปฐมเทศนา');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC105', 'QC105','4', 'ประกาศพระพุทธศาสนาเป็นครั้งแรก ', 'แสดงพระธรรมเทศนาแก่ปัญจวัคคีย์ ', 'เกิดศรัทธาและมีความเชื่อในสิ่งศักดสิ์ทิธิ์', 'ประกาศศาสนาออกไปยังดินแดนต่างๆ ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC106', 'QC106','4', 'มีปัญญามาก', 'ใฝ่เรียน ใฝ่รู้', 'มีใจกว้าง มีน้ำาใจ', 'มีความเสียสละเป็นเลิศ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC107', 'QC107','1', 'เป็นคนสันโดษ', ',มีความอดทนสูง ', 'มีความกตัญญูเป็นเลิศ', 'ยอมรับฟังความคิดเห็นของผู้อื่น ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC108', 'QC108','2', 'ผู้แสดงธรรม ', 'ผู้มีวินัย', 'ผู้มีฤทธิ์มาก', 'ผู้มีประสบการณ์ ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC109', 'QC109','1', 'ครุธรรม 8 ประการ', 'ศีล 5', 'ศีล 8', 'ศีล 10');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC110', 'QC110','3', 'มีปฏิภาณ', 'เป็นแบบอย่างด้านความประพฤต', 'มีความเสียสละและอดทนเป็นเลิศ', 'เป็นผู้ที่รักษาความมั่นคงของพระพุทธศาสนา');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC201', 'SOCIAL', 'SOC201', 'เขตเทือกเขาหินใหม่ของทวีปอเมริกาเหนือ จะอยู่ในบริเวณใดของทวีป');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC202', 'SOCIAL', 'SOC201', 'เขตหินฐานทวีปคะเนเดียนของทวีปอเมริกาเหนือ จะอยู่ในบริเวณใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC203', 'SOCIAL', 'SOC201', 'เขตที่ราบใหญ่หรือเกรตเพลนส์(Great Plains) มีพื้นที่ ครอบคลุมบริเวณในข้อใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC204', 'SOCIAL', 'SOC201', 'ทำไมบริเวณคาบสมุทรแลบราดอร์จึงมีลักษณะเว้าแหว่ง และเป็นแบบฟีออร์ด (Fiord) ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC205', 'SOCIAL', 'SOC201', 'ภูมิอากาศแบบป่าฝนเขตร้อนหรือแบบร้อนชื้นตลอดปี ของทวีปอเมริกาเหนือจะพบในบริเวณใด ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC206', 'SOCIAL', 'SOC201', 'ทำไมบริเวณที่ราบสูงเม็กซิโกจึงมีพืชพรรณธรรมชาติ ประเภทตะบองเพชร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC207', 'SOCIAL', 'SOC201', ' . ภูมิอากาศแบบทุนดราจะอยู่ตอนใดของทวีปอเมริกาเหนือ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC208', 'SOCIAL', 'SOC201', 'ดินที่มีความอุดมสมบูรณ์มากของทวีปอเมริกาเหนือ จะอยู่บริเวณใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC209', 'SOCIAL', 'SOC201', 'ทำไมประเทศแคนาดาและสหรัฐอเมริกาจึงมีแนวโน้ม ขยายพื้นที่ป่ามากขึ้นเรื่อยๆ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC210', 'SOCIAL', 'SOC201', 'ทำไมจำนวนสัตว์ป่าจึงมีจำนวนลดลงมากในอเมริกากลาง');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC201', 'QC201','3', 'เหนือ', 'ตะวันตก', 'ตะวันออก', 'ใต้');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC202', 'QC202','4', 'เทือกเขาแอปพาเลเชียน', 'รอบอ่าวฮัดสัน', 'รอบอ่าวเม็กซิโก', 'คาบสมุทรแลบราดอร์');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC203', 'QC203','2', 'บริเวณชายฝั่งตะวันตกของทวีปตลอดแนวยาว เหนือลงใต้', 'ชายฝั่งมหาสมุทรอาร์กติกทางตอนบนของทวีปจนถึงอเมริกากลาง', 'ชายฝั่งมหาสมุทรทางด้านตะวันออกทั้งหมด', 'บริเวณตอนกลางของประเทศแคนาดา');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC204', 'QC204','1', 'ถูกธารน้ำแข็งครูดจนสึกกร่อน', 'กระแสลมที่พัดผ่านอย่างรุนแรง', 'เกิดจากการทรุดตัวของเปลือกโลก', 'ภัยธรรมชาติจากแผ่นดินไหวและภูเขาไฟระเบิด');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC205', 'QC205','1', 'ตอนใต้ของประเทศเม็กซิโกไปทางชายฝั่งตะวันออก ของอเมริกากลางถึงปานามา ', 'ตอนเหนือของประเทศแคนาดา และบริเวณ เทือกเขาร็อกก', 'ชายฝั่งตะวันตกของประเทศแคนาดาและอเมริกา', 'บริเวณคาบสมุทรแคลิฟอร์เนีย ที่ราบสูงเม็กซิโก');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC206', 'QC206','2', 'เพราะภูมิอากาศแบบทะเลทราย', 'เพราะมีฝนตกน้อยกว่าที่อื่น', 'เพราะอยู่ห่างไกลจากทะเล', 'เพราะอยู่บนที่ราบสูง');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC207', 'QC207','4' , 'พบอยู่ทั่วไปทางตอนเหนือจนถึงตอนกลางของทวีป','ตอนเหนือสุดของประเทศแคนาดา', 'ตอนเหนือสุดบริเวณอ่าวฮัดสัน', 'ด้านตะวันออกของประเทศสหรัฐอเมริกา');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC208', 'QC208','2',  'บริเวณทะเลสาบทั้งห้า','เพราะพื้นที่ในการทำป่าไม้มีปริมาณมากกว่าแถบอื่น', 'ตอนเหนือของประเทศสหรัฐอเมริกา', 'ตะวันตกเฉียงใต้ของทวีปอเมริกาเหนือ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC209', 'QC209','1', 'เพราะมีระบบการจัดการดูแลพื้นที่ป่าไม้อย่างดีมี การควบคุมดูแลการบังคับใช้กฎหมายเกี่ยวกับป่าไม้ อย่างเข้มงวด', 'เพราะมีภูมิอากาศหลากหลายเหมาะสมกับป่าไม้ ทุกชนิด', 'เพราะประชากรนิยมปลูกป่าเพื่อทำอุตสาหกรรมป่าไม้ ', 'เพราะพื้นที่ในการทำป่าไม้มีปริมาณมากกว่าแถบอื่น');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC210', 'QC210','2', 'เพราะภูมิอากาศแปรปรวน' ,'เพราะถูกทำลายถิ่นที่อยู่และถูกล่า', 'เพราะเกิดภัยธรรมชาติอยู่เสมอ', 'เพราะขาดการเพาะพันธุ์ที่เหมาะสม');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC301', 'SOCIAL', 'SOC301', '“ตลาดสี่มุมเมืองจะมีสินค้าจากเกษตรกรนำมาขาย จำนวนมาก ส่วนตลาดรถยนต์จะมีอยู่ในตัวเมืองของทุก จังหวัด” ข้อความดังกล่าวเป็นการแบ่งลักษณะของตลาด ตามข้อใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC302', 'SOCIAL', 'SOC301', '. ข้อความใดสอดคล้องกับลักษณะของตลาดแข่งขัน สมบูรณ์ ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC303', 'SOCIAL', 'SOC301', 'ข้อดีของตลาดแข่งขันสมบูรณ์ คืออะไร ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC304', 'SOCIAL', 'SOC301', '“ถ้าราคาสินค้าและบริการใดๆ เพิ่มขึ้น ความต้องการซื้อ สินค้าและบริการนั้นจะลดน้อยลง ถ้าราคาสินค้าหรือ บริการใดๆ ลดลง ความต้องการซื้อสินค้าและบริการนั้น จะเพิ่มขึ้น” ข้อความดังกล่าวสอดคล้องกับข้อใด ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC305', 'SOCIAL', 'SOC301', 'ข้อความเกี่ยวกับปัจจัยก าหนดอุปทานข้อใดถูกต้อง ');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC306', 'SOCIAL', 'SOC301', 'การปรับตัวที่ท าให้ปริมาณซื้อและปริมาณขายเท่ากัน พอดี ณ ระดับราคาใดราคาหนึ่งนั้น สอดคล้องกับ ข้อความใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC307', 'SOCIAL', 'SOC301', '“ถ้าในตลาดมีผู้ขายเพียงรายเดียว อาจก าหนดราคา สินค้าให้สูงได้” ข้อความดังกล่าวสอดคล้องกับปัจจัยการ ก าหนดราคาในข้อใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC308', 'SOCIAL', 'SOC301', 'การก าหนดราคาในทางปฏิบัติมีวัตถุประสงค์หลาย ประการ ยกเว้นข้อใด');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC309', 'SOCIAL', 'SOC301', 'ข้อเสียของตลาดแข่งขันสมบูรณ์ คืออะไร');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QC310', 'SOCIAL', 'SOC301', 'ข้อใดคือความหมายของกลไกราคา');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC301', 'QC301','1', 'แบ่งตามชนิดของสินค้า', 'แบ่งตามลักษณะการขายสินค้า', 'แบ่งตามวัตถุประสงค์ของการใช้สินค้า ', 'แบ่งตามลักษณะการแข่งขันที่มีอยู่ในตลาด');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC302', 'QC302','3', 'ก้อยซึ่งเป็นแม่บ้านมักจะซื้อผงซักฟอกหลายยี่ห้อ เปลี่ยนกันไป เพราะคุณภาพและราคาใกล้เคียงกัน', 'ตลาดนัดกลางของจังหวัดจะมีคนนิยมไปซื้อของ จำนวนมาก แต่มีสินค้าจำนวนน้อย ', 'บริษัท สหรุ่งเรือง ผลิตเตารีดไฟฟ้ารุ่นใหม่ออกมา ซึ่งมีราคาแพงกว่าเตารีดของบริษัทอื่น', 'ในวันขึ้นปีใหม่ร้านค้าที่เก่งเป็นเจ้าของ ประกาศลด ราคาสินค้าถูกกว่าเดิม 50 เปอร์เซ็นต์');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC303', 'QC303','2', 'ผู้บริโภคมีโอกาสในการเลือกซื้อสินค้าราคาที่ต่ำสุด', 'ผู้ผลิตสามารถก าหนดราคาสินค้าได้สูง', 'ผู้บริโภคและผู้ผลิตร่วมมือกันกำหนดราคาสินค้า', '. ผู้ผลิตสินค้ามีการแข่งขันกันอย่างเสรีเพื่อขายสินค้า ให้ได้มากที่สุด');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC304', 'QC304','1', 'กฎของอุปสงค์', 'กฎของอุปทาน', 'ตัวกำหนดอุปสงค์ ', 'ตัวกำหนดอุปทาน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC305', 'QC305','4', 'จำนวนผู้ผลิตถ้ามีมากขึ้น ทำให้อุปทานเพิ่มขึ้น ถ้าผู้ผลิตลดน้อยลง จะทำให้อุปทานลดลง', 'ถ้าราคาสินค้าสูงขึ้น ผู้ผลิตจะลดจำนวนการผลิตลง', 'ช่วงภาวะน้ำมันราคาแพง ผู้ผลิตรถยนต์จะผลิต รถยนต์ขนาดใหญ่ที่ประหยัดน ถ้ามัน ', 'ถ้าหากสินค้ามีราคาถูกลง ผู้ผลิตจะได้ก าไรน้อยลง ทำให้ลดการผลิตลง');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC306', 'QC306','4', 'ราคาดุลยภาพ', 'กลไกราคา', 'อุปสงค์', 'อุปทาน');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC307', 'QC307','2', 'การแข่งขันของตลาด', 'กลุ่มเป้าหมาย', 'สภาวะทางเศรษฐกิจ', 'ต้นทุนการผลิตและจำหน่าย');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC308', 'QC308','3', 'เพื่อให้ราคาสินค้าเท่าเทียมกัน', 'เพื่อขยายตลาดให้กว้างขวาง', 'เพื่อสร้างยอดขาย', 'เพื่อสร้างกำไร');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC309', 'QC309','4', 'ผู้ผลิตไม่มีการแข่งขันกันอย่างแท้จริง', 'ผู้บริโภคเป็นผู้ก าหนดราคาสินค้า', 'ผู้ผลิตได้กำไรเป็นอัตราส่วนที่ค่อนข้างมาก', 'ผู้ผลิตสินค้าพยายามลดต้นทุนทำให้คุณภาพสินค้าต่ำ');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CC310', 'QC310','1', 'การเปลี่ยนแปลงราคาสินค้าเกิดจากแรงผลักของอุปสงค์และอุปทาน', 'การผลิตที่มีความสมดุลกับการบริโภค ', 'ราคาสินค้าและการผลิตถูกกำหนดโดยความต้องการของผู้บริโภค', 'ปริมาณสินค้าที่ผู้บริโภคและผู้ผลิตมีความต้องการเท่ากัน');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE101', 'ENGLISH', 'ENG101', 'He ___  piano very well.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE102', 'ENGLISH', 'ENG101', '___ she go to school ?');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE103', 'ENGLISH', 'ENG101', 'I ___ you.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE104', 'ENGLISH', 'ENG101', '___ you understand ?');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE105', 'ENGLISH', 'ENG101', 'She ____ like this dress.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE106', 'ENGLISH', 'ENG101', 'They ____ at KMUTT.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE107', 'ENGLISH', 'ENG101', '___ we pay by cash ?');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE108', 'ENGLISH', 'ENG101', 'You ____ to school everyday.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE109', 'ENGLISH', 'ENG101', 'It ____ bark at night.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE110', 'ENGLISH', 'ENG101', '___ he read a book ?');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE101', 'QE101','1', 'plays', 'play', 'playes', 'played');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE102', 'QE102','3', 'Did', 'Do', 'Does', 'Done');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE103', 'QE103','2', 'loves', 'love', 'loved', 'loveds');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE104', 'QE104','4', 'Done', 'Does', 'Did', 'Do');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE105', 'QE105','1', 'does not', 'do not', 'did not', '-');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE106', 'QE106','2', 'studies', 'study', 'studied', 'studys');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE107', 'QE107','3', 'Did', 'Does', 'Do', 'Done');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE108', 'QE108','4', 'went', 'goes', 'gone', 'go');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE109', 'QE109','2', 'do not', 'does not', 'did not', '-');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE110', 'QE110','4', 'Done', 'Do', 'Did', 'Does');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE201', 'ENGLISH', 'ENG201', 'He ___  piano very well.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE202', 'ENGLISH', 'ENG201', '___ she go to school ?');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE203', 'ENGLISH', 'ENG201', 'I ___ you.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE204', 'ENGLISH', 'ENG201', '___ you understand ?');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE205', 'ENGLISH', 'ENG201', 'She ____ like this dress.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE206', 'ENGLISH', 'ENG201', 'They ____ at KMUTT.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE207', 'ENGLISH', 'ENG201', '___ we pay by cash ?');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE208', 'ENGLISH', 'ENG201', 'You ____ to school everyday.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE209', 'ENGLISH', 'ENG201', 'It ____ bark at night.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE210', 'ENGLISH', 'ENG201', '___ he read a book ?');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE201', 'QE201','2', 'will play', 'played', 'playes', 'playes');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE202', 'QE202','3', 'Were', 'Do', 'Did', 'Was');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE203', 'QE203','4', 'will love', 'loves', 'love', 'loved');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE204', 'QE204','4', 'Will', 'Was', 'Were', 'Did');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE205', 'QE205','3', 'will not', 'was not', 'did not', '-');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE206', 'QE206','2', 'will study', 'studied', 'study', 'studys');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE207', 'QE207','3', 'Will', 'Was', 'Did', 'Were');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE208', 'QE208','1', 'went', 'goes', 'were go', 'was go');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE209', 'QE209','1', 'did not', 'were not', 'was not', '-');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE210', 'QE210','2', 'Will', 'Did', 'Was', 'Were');
+
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE301', 'ENGLISH', 'ENG301', 'He ___  piano very well.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE302', 'ENGLISH', 'ENG301', '___ she go to school ?');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE303', 'ENGLISH', 'ENG301', 'I ___ you.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE304', 'ENGLISH', 'ENG301', '___ you understand ?');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE305', 'ENGLISH', 'ENG301', 'She ____ like this dress.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE306', 'ENGLISH', 'ENG301', 'They ____ at KMUTT.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE307', 'ENGLISH', 'ENG301', '___ we pay by cash ?');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE308', 'ENGLISH', 'ENG301', 'You ____ to school everyday.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE309', 'ENGLISH', 'ENG301', 'It ____ bark at night.');
+INSERT INTO y2s.QUIZ (QUESTIONID, SUBJECT, LESSONID, QUESTION ) 
+VALUES ('QE310', 'ENGLISH', 'ENG301', '___ he read a book ?');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE301', 'QE301','4', 'will playes', 'play', 'playes', 'will play');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE302', 'QE302','2', 'Do', 'Will', 'Were', 'Was');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE303', 'QE303','1', 'will love', 'loves', 'love', '-');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE304', 'QE304','3', 'Were', 'Do', 'Will', 'Was');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE305', 'QE305','3', 'were not', 'was not', 'will not', '-');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE306', 'QE306','4', 'studys', 'studies', 'study', 'will study');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE307', 'QE307','3', 'Do', 'Was', 'Will', 'Were');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE308', 'QE308','2', 'goes', 'will go', 'were go', 'was go');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE309', 'QE309','1', 'will not', 'were not', 'was not', '-');
+INSERT INTO y2s.CHOICE (CHOICEID, QUESTIONID, IsRight, CHOICE1, CHOICE2, CHOICE3 , CHOICE4 ) 
+VALUES ('CE310', 'QE310','3', 'Was', 'Do', 'Will', 'Were');
 
 
+ALTER TABLE LESSON
+ADD FOREIGN KEY (SUBJECT) REFERENCES SUBJECT(SUBJECT);
 
+ALTER TABLE QUIZ
+ADD FOREIGN KEY (LESSONID) REFERENCES LESSON(LESSONID);
 
-
-
+ALTER TABLE CHOICE
+ADD FOREIGN KEY (QUESTIONID) REFERENCES QUIZ(QUESTIONID);
 
 
