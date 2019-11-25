@@ -14,10 +14,17 @@
     </head>
     <body>
         <h1>QUIZ</h1>
-        
+        <div>
         <c:forEach items="${ques}" var="q">
             ${q.question}
+            <br>
+            <c:forEach items="${q.choice}" var="c">
+                ${c.choice1}
+                ${c.choice2}
+                ${c.choice3}
+                ${c.choice4}
+            </c:forEach>
         </c:forEach>
-
+        </div>
     </body>
 </html>
