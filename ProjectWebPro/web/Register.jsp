@@ -142,7 +142,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col"></div>
-                    <div class="col-6" style="text-align: center; margin-top: 50px;">
+                    <div class="col-6" style="text-align: center; margin-top: 50px; color: white;">
                         <h1>Register</h1>
                     </div>
                     <div class="col"></div>      
@@ -186,6 +186,7 @@
                             <div class="frame">
                                 PASSWORD : <input class="boxPass" id="pwd" type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                                                   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="">
+                                <input type="checkbox" onclick="myFunction()">Show Password
                             </div>
                         </div>
                         <div class="col"></div>      
@@ -245,19 +246,38 @@
 
                         <div class="col-8" style="text-align: center;">
 
-                            <a href="Signins.jsp">
+                            <a href="Signin.jsp">
                                 <input type="submit" value="CONFIRM" class="boxCon">
                             </a>
-
-                            <a href="Signin.jsp">
-                                <input type="submit" value="CANCEL" class="boxCan">
-                            </a>
-
                         </div>
                     </div>
             </div>
         </form>
-                            
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                </div>
+                <div class="col-8" style="text-align: center;">
+                    <br>
+                    <a href="Signin.jsp">
+                        <input type="submit" value="CANCEL" class="boxCan">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("pwd");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+        </script>
+
+
 
     </body>
 </html>
