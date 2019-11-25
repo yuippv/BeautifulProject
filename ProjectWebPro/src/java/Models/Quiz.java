@@ -16,11 +16,11 @@ public class Quiz {
     String question;
     ArrayList<Choice> choices;
 
-    public ArrayList<Choice> getAnswers() {
+    public ArrayList<Choice> getChoices() {
         return choices;
     }
 
-    public void setChoice(ArrayList<Choice> choices) {
+    public void setChoices(ArrayList<Choice> choices) {
         this.choices = choices;
     }
 
