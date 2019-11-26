@@ -113,32 +113,48 @@
                     </div>
                 </nav>
                 <div class="container">
+                    <div class="quizSize">
 
 
-                    <c:forEach items="${ques}" var="q" varStatus="qvs">
+                        <c:forEach items="${ques}" var="q" varStatus="qvs">
 
-                        <div>${qvs.count}. ${q.question} </div>
-                        <div class="frame">
+                            <div>${qvs.count}. ${q.question} </div>
+                            <br>
+
                             <c:forEach items="${q.choices}" var="c">
+<<<<<<< HEAD
                                 <input type="radio" value="1" name="${c.choiceId}"/>${c.choice1}
+=======
+                             
+                                <input type="radio" value="${c.choiceId}" name="${qvs.count}"/>${c.choice1}
+>>>>>>> fbb21b40f3fc406be3be987b70722ae4934a7426
                                 <br>
                                 <input type="radio" value="2" name="${c.choiceId}"/>${c.choice2}
                                 <br>
                                 <input type="radio" value="3" name="${c.choiceId}"/>${c.choice3}
                                 <br>
+<<<<<<< HEAD
                                 <input type="radio" value="4" name="${c.choiceId}"/>${c.choice4}
+=======
+                                <input type="radio" value="${c.choiceId}" name="${qvs.count}"/>${c.choice4}
+                                <hr>
+>>>>>>> fbb21b40f3fc406be3be987b70722ae4934a7426
                                 <br>
-                                <br>
-                            </div>
-                        </c:forEach>
 
+<<<<<<< HEAD
                     </c:forEach>
                     <div style="width:100%">
                         <input type="submit" value="submit" style="margin-top: 1em;"/>
                     </div>
                     <!--name = "choice"-->
+=======
+                            </c:forEach>
+>>>>>>> fbb21b40f3fc406be3be987b70722ae4934a7426
 
+                        </c:forEach>
+                        <!--name = "choice"-->
 
+                    </div>
                 </div>
             </div>
             <!-- jQuery CDN - Slim version (=without AJAX) -->

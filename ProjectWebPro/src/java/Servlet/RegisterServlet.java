@@ -47,7 +47,7 @@ public class RegisterServlet extends HttpServlet {
         String tel = request.getParameter("tel");
         String address = request.getParameter("address");
         String school = request.getParameter("school");
-
+        String warning="";
         AccountJpaController ajc = new AccountJpaController(utx, emf);
         List<Account> accountDB = ajc.findAccountEntities();
 
@@ -58,8 +58,11 @@ public class RegisterServlet extends HttpServlet {
 
             for (Account account : accountDB) {
                 if (account.getEmail().equalsIgnoreCase(email)) {
-                    request.setAttribute("warning", "Email has been use.");
-                    response.sendRedirect("/ProjectWebPro/Register.jsp");
+                    warning = "Email has been use";
+                    request.setAttribute("warning", warning);
+                    System.out.println(warning);
+                    getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+                   
                     return;
                 }
             }
