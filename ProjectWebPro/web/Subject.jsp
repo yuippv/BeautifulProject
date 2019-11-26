@@ -91,7 +91,9 @@
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
-                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <p>SHOWING : ${topic}</p>
+                        </div>
                         <div class="col-4"></div>
                         <div class="col-4">
                             <img src="images/${account.gender}.png" class="profile" style="vertical-align:middle">
@@ -100,6 +102,7 @@
                     </div>
                 </nav>
                 <!--card lesson-->
+
                 <div class="row">
                     <c:forEach items="${lessons}" var="l" varStatus="vs">
                         <div class="col-4">
@@ -116,6 +119,7 @@
                         </div>
                     </c:forEach>
                 </div>
+
 
             </div>
             <!-- jQuery CDN - Slim version (=without AJAX) -->
