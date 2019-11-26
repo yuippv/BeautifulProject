@@ -47,6 +47,7 @@
                 width: 100%;
                 border-radius:10px;
                 border: none;
+                height: 40px;
             }
 
             .boxSign{
@@ -55,6 +56,7 @@
                 width: 100%;
                 transition: 0.3s;
                 border-radius:10px;
+                
             }
             .boxSign:hover {opacity: 0.5}
 
