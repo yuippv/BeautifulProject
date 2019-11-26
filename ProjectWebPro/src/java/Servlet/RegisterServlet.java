@@ -71,7 +71,7 @@ public class RegisterServlet extends HttpServlet {
                     System.out.println(email + password + firstname + lastname + gender + tel + address + school);
                     ajc.create(newAccount);
                     
-                    response.sendRedirect("/ProjectWebPro/Index.jsp");
+                    response.sendRedirect("/ProjectWebPro/Signin.jsp");
                     return;
                 } catch (RollbackFailureException ex) {
                     Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
