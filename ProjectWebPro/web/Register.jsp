@@ -138,6 +138,7 @@
         </style>
     </head>
     <body>
+        
         <form method="post" action="Register">
             <div class="container">
                 <div class="row">
@@ -152,6 +153,7 @@
                     <div class="row">
                         <div class="col"></div>
                         <div class="col-6">
+                            <p style="color: red">${warning}</p>
                             <div class="frame" style="text-align: center; ">
                                 FIRSTNAME : <input class="boxName" type="text" name="firstname" pattern="[A-Za-z].{,}"required="">
                             </div></div>
@@ -174,7 +176,7 @@
                         <div class="col-6" style="text-align: center;">
                             <div class="frame">
                                 EMAIL : <input class="boxMail" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="" title="Must contain correct email form.">
-                                <label style="color: red">${warning}</label>
+                                
                             </div>
                         </div>
                         <div class="col"></div>      
@@ -279,6 +281,6 @@
         </script>
 
 
-
+${warning}
     </body>
 </html>
