@@ -23,13 +23,14 @@
 
         <style>
             body{
-                text-align: center;
-                background-color: #b3aad6;
-                font-family: 'Titillium Web', sans-serif;
-                font-weight: 700; 
+                background-image: url(images/bg/bgnong.PNG);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position:right;
+                height: 750px;
+                background-color: #b3aad6; 
                 color: white;
-
-            }  
+            }
             button{
                 border: none;
                 width: 400px;
