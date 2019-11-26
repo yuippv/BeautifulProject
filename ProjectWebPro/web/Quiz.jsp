@@ -45,6 +45,7 @@
         <title>Quiz Page</title>
     </head>
     <body>
+        <form action="Result">
         <div class="wrapper">
             <!-- Sidebar  -->
             <nav id="sidebar">
@@ -119,19 +120,22 @@
                         <div>${qvs.count}. ${q.question} </div>
                         <div class="frame">
                             <c:forEach items="${q.choices}" var="c">
-                                <input type="radio" value="${c.choiceId}" name="${qvs.count}"/>${c.choice1}
+                                <input type="radio" value="1" name="${c.choiceId}"/>${c.choice1}
                                 <br>
-                                <input type="radio" value="${c.choiceId}" name="${qvs.count}"/>${c.choice2}
+                                <input type="radio" value="2" name="${c.choiceId}"/>${c.choice2}
                                 <br>
-                                <input type="radio" value="${c.choiceId}" name="${qvs.count}"/>${c.choice3}
+                                <input type="radio" value="3" name="${c.choiceId}"/>${c.choice3}
                                 <br>
-                                <input type="radio" value="${c.choiceId}" name="${qvs.count}"/>${c.choice4}
+                                <input type="radio" value="4" name="${c.choiceId}"/>${c.choice4}
                                 <br>
                                 <br>
                             </div>
                         </c:forEach>
 
                     </c:forEach>
+                    <div style="width:100%">
+                        <input type="submit" value="submit" style="margin-top: 1em;"/>
+                    </div>
                     <!--name = "choice"-->
 
 
@@ -152,5 +156,6 @@
                 });
             </script>
         </div>
+        </form>
     </body>
 </html>
