@@ -14,12 +14,12 @@ and open the template in the editor.
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 @import "https://fonts.googleapis.com/css?family=Kanit&display=swap";
 body {
-    font-family:'Kanit','Poppins';
+    font-family:'Poppins','Kanit';
     background: #fafafa;
 }
     
 p {
-    font-family: 'Kanit','Poppins';
+    font-family: 'Poppins','Kanit';
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
