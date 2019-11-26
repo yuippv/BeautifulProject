@@ -41,6 +41,11 @@
                 width:20%;
                 margin : 10px;
             }
+            .quizSize{
+                font-size: 24px;
+
+            }
+            
         </style>
         <title>Quiz Page</title>
     </head>
@@ -102,7 +107,6 @@
                             <p>
                                 ${lessonid}
                             </p>
-
                         </div>
                         <div class="col-4"></div>
                         <div class="col-4">
@@ -112,13 +116,16 @@
                     </div>
                 </nav>
                 <div class="container">
+                    <div class="quizSize">
 
 
-                    <c:forEach items="${ques}" var="q" varStatus="qvs">
+                        <c:forEach items="${ques}" var="q" varStatus="qvs">
 
-                        <div>${qvs.count}. ${q.question} </div>
-                        <div class="frame">
+                            <div>${qvs.count}. ${q.question} </div>
+                            <br>
+
                             <c:forEach items="${q.choices}" var="c">
+                             
                                 <input type="radio" value="${c.choiceId}" name="${qvs.count}"/>${c.choice1}
                                 <br>
                                 <input type="radio" value="${c.choiceId}" name="${qvs.count}"/>${c.choice2}
@@ -126,15 +133,15 @@
                                 <input type="radio" value="${c.choiceId}" name="${qvs.count}"/>${c.choice3}
                                 <br>
                                 <input type="radio" value="${c.choiceId}" name="${qvs.count}"/>${c.choice4}
+                                <hr>
                                 <br>
-                                <br>
-                            </div>
+
+                            </c:forEach>
+
                         </c:forEach>
+                        <!--name = "choice"-->
 
-                    </c:forEach>
-                    <!--name = "choice"-->
-
-
+                    </div>
                 </div>
             </div>
             <!-- jQuery CDN - Slim version (=without AJAX) -->
