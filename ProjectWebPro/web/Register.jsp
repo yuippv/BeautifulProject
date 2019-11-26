@@ -247,7 +247,6 @@
                         </div>
 
                         <div class="col-8" style="text-align: center;">
-
                             <a href="Signin.jsp">
                                 <input type="submit" value="CONFIRM" class="boxCon">
                             </a>
