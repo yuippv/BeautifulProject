@@ -94,7 +94,7 @@
                         <div class="col-4"></div>
                         <div class="col-4"></div>
                         <div class="col-4">
-                            <img src="images/male.png" class="profile" style="vertical-align:middle">
+                            <img src="images/${account.gender}.png" class="profile" style="vertical-align:middle">
                             <h3 class="helloName">Hello : ${account.firstname}</h3>
                         </div>
                     </div>
@@ -106,12 +106,11 @@
                             <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; ">
                                 <div class="card-body">
                                     <a href="GetLesson?lessonid=${l.lessonid}">
-                                    <h4 class="card-title">${l.lessonid}</h4>
-                                    <p class="card-text">${l.lessondescription}</p>
-                                    
-                                    </a>
+                                        <h4 class="card-title">${l.lessonid}</h4>
+                                        <p class="card-text">${l.lessondescription}</p>
                                 </div>
-                                    <img style="height: 200px; width: 100%; display: block;" src="images/picsubject/${l.lessonid}.jpg" alt="Card image">
+                                <img style="height: 200px; width: 100%; display: block;" src="images/picsubject/${l.lessonid}.jpg" alt="Card image">
+                                </a> 
                             </div>  
 
                         </div>
