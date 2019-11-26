@@ -37,6 +37,7 @@ public class GetLessonServlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String lessonid = request.getParameter("lessonid");
+        
         System.out.println(lessonid);
         if (lessonid == null) {
             getServletContext().getRequestDispatcher("/LessonList?catagories=Subject").forward(request, response);
@@ -46,6 +47,8 @@ public class GetLessonServlet extends HttpServlet {
             ArrayList<Quiz> q = qc.findbyques(lessonid);
             System.out.println("5555");
             System.out.println(q);
+            
+            request.setAttribute("lessonid", lessonid);
             request.getSession().setAttribute("ques", q);
             getServletContext().getRequestDispatcher("/Quiz.jsp").forward(request, response);
         }
