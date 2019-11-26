@@ -41,6 +41,11 @@
                 width:20%;
                 margin : 10px;
             }
+            .quizSize{
+                font-size: 24px;
+
+            }
+            
         </style>
         <title>Quiz Page</title>
     </head>
@@ -103,7 +108,6 @@
                             <p>
                                 ${lessonid}
                             </p>
-
                         </div>
                         <div class="col-4"></div>
                         <div class="col-4">
