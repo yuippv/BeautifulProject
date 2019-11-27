@@ -38,6 +38,7 @@
                 width: 100%;
                 height: 100%;
             }
+            .foot { position: absolute; bottom: 0; height: 40px; width: inherit; }
         </style>
     </head>
 
@@ -46,7 +47,7 @@
             <!-- Sidebar  -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>Y2S Academe</h3>
+                    <h3>Y2S Academy</h3>
                 </div>
                 <ul class="list-unstyled components">
                     <li>
@@ -80,13 +81,15 @@
                             </li>
                         </ul>
                     </li>
-
                     <li>
                         <a href="MyAccount.jsp"><img src="images/profile.png" style="vertical-align:middle; width: 30px;"> Profile</a>
                     </li>
                     <li>
                         <a href="Signout"><img src="images/logout.png" style="vertical-align:middle; width: 30px;"> Logout</a>
                     </li>
+                    <div class="foot">              
+                        <a href="https://www.facebook.com/SIT.Family/"><img src="images/facebook.png" style="vertical-align:middle; width: 30px;"> Y2S </a>
+                    </div>
                 </ul>
             </nav>
 
@@ -115,19 +118,19 @@
                             <div class="carousel-item active">
                                 <img src="images/1.JPG" class="d-block w-100">
                                 <div class="carousel-caption d-none d-md-block">
-                                  
+
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img src="images/2.JPG" class="d-block w-100">
                                 <div class="carousel-caption d-none d-md-block">
-                               
+
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img src="images/3.jpg" class="d-block w-100">
                                 <div class="carousel-caption d-none d-md-block">
-                                  
+
                                 </div>
                             </div>
                         </div>
@@ -141,7 +144,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
 
 
