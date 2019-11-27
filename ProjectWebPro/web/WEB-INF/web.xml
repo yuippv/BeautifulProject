@@ -1,12 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>Filter.AuthenticationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>ResultServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>GetQuizServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>LessonListServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>QuizServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>EditAccountServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>MyAccountServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>SignoutServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/Result.jsp</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/Subject.jsp</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/Quiz.jsp</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/MyAccount.jsp</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/Index.jsp</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
     <servlet>
         <servlet-name>SigninServlet</servlet-name>
         <servlet-class>Servlet.SigninServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>IndexServlet</servlet-name>
-        <servlet-class>Servlet.IndexServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SignoutServlet</servlet-name>
@@ -33,8 +105,8 @@
         <servlet-class>Servlet.LessonListServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>GetLessonServlet</servlet-name>
-        <servlet-class>Servlet.GetLessonServlet</servlet-class>
+        <servlet-name>GetQuizServlet</servlet-name>
+        <servlet-class>Servlet.GetQuizServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>GetQuestionServlet</servlet-name>
@@ -47,10 +119,6 @@
     <servlet-mapping>
         <servlet-name>SigninServlet</servlet-name>
         <url-pattern>/Signin</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>IndexServlet</servlet-name>
-        <url-pattern>/Index</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SignoutServlet</servlet-name>
@@ -73,10 +141,6 @@
         <url-pattern>/Quiz</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>GetLessonServlet</servlet-name>
-        <url-pattern>/GetLesson</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>LessonListServlet</servlet-name>
         <url-pattern>/LessonList</url-pattern>
     </servlet-mapping>
@@ -87,6 +151,10 @@
     <servlet-mapping>
         <servlet-name>ResultServlet</servlet-name>
         <url-pattern>/Result</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetQuizServlet</servlet-name>
+        <url-pattern>/GetQuiz</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
