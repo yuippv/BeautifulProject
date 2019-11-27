@@ -53,7 +53,7 @@
             <!-- Sidebar  -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>Y2S Academe</h3>
+                    <h3>Y2S Academy</h3>
                 </div>
                 <ul class="list-unstyled components">
                     <li>
@@ -116,7 +116,7 @@
                         You're score is
                     </h1>
                     <h1>${score}</h1>
-                    <a href="GetLesson?lessonid=${lessonid}">
+                    <a href="GetQuiz?lessonid=${lessonid}">
                         <button type="button" class="btn btn-warning">
                             Try again</button></a>
                     <a href="Index.jsp">
