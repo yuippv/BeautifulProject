@@ -6,6 +6,7 @@
 package Servlet;
 
 import Controller.QuizController;
+import Models.Choice;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -33,9 +34,17 @@ public class ResultServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String questionId = request.getParameter("questionId") ;
-        
-        
-        
+        ArrayList<Models.Quiz> qary = (ArrayList<Models.Quiz>) request.getSession(false).getAttribute("ques");
+        int score = 0;
+        for(Models.Quiz q : qary){
+            for(Choice c : q.getChoices()){
+                String uans = request.getParameter(c.getChoiceId());
+                if(c.getIsRight().equals(uans)){
+                    score++;
+                }
+            }
+        }
+        request.setAttribute("score", score);
     getServletContext().getRequestDispatcher("/Result.jsp").forward(request, response);
 
     }
