@@ -108,7 +108,7 @@
                         <div class="col-4">
                             <div class="card border-warning mb-3 cardBord" style="max-width: 20rem; ">
                                 <div class="card-body">
-                                    <a href="GetLesson?lessonid=${l.lessonid}">
+                                    <a href="GetQuiz?lessonid=${l.lessonid}">
                                         <h4 class="card-title">${l.lessonid}</h4>
                                         <p class="card-text">${l.lessondescription}</p>
                                 </div>
