@@ -34,6 +34,8 @@ public class SignoutServlet extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        
         HttpSession session = request.getSession();
         session.invalidate();
         response.sendRedirect("/ProjectWebPro/Home.jsp");
