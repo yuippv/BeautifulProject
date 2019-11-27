@@ -33,6 +33,8 @@ public class ResultServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        
         String questionId = request.getParameter("questionId") ;
         String lessonid = request.getParameter("lessonid");
         ArrayList<Models.Quiz> qary = (ArrayList<Models.Quiz>) request.getSession(false).getAttribute("ques");
