@@ -92,7 +92,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
                         <div class="col-4">
-                            <p>SHOWING : ${topic}</p>
+                            <p>${topic}</p>
                         </div>
                         <div class="col-4"></div>
                         <div class="col-4">
