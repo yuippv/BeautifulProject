@@ -23,7 +23,7 @@
 
         <style>
             body{
-                background-image: url(images/bg/bgnong.PNG);
+                background-image: url(images/bg/bghome.PNG);
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-position:right;
@@ -50,7 +50,6 @@
             <div class="container">
                 <a href="Signin">
                     <button type="button">WELCOME TO Y2S ACADEMY !</button>
-<!--                    <img src="images/fing.gif">-->
                 </a>
 
             </div>
