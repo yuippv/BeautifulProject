@@ -116,11 +116,9 @@
                             </div>
                         </div>
                     </nav>
+                            
                     <div class="container">
                         <div class="quizSize">
-
-
-<<<<<<< HEAD
                             <c:forEach items="${ques}" var="q" varStatus="qvs">
 
                                 <div>${qvs.count}. ${q.question} </div>
@@ -146,26 +144,6 @@
                                 </div>
                             <!--name = "choice"-->
                         </div>
-=======
-                            <c:forEach items="${q.choices}" var="c">
-
-                                <input type="radio" value="1" name="${c.choiceId}"/>${c.choice1}
-                                <br>
-                                <input type="radio" value="2" name="${c.choiceId}"/>${c.choice2}
-                                <br>
-                                <input type="radio" value="3" name="${c.choiceId}"/>${c.choice3}
-                                <br>
-                                <input type="radio" value="4" name="${c.choiceId}"/>${c.choice4}
-                                <hr>
-                                <br>
-                    </c:forEach>
-                    <!--name = "choice"-->
-                            </c:forEach>
-                     <div style="width:100%">
-                        <input type="submit" value="submit" style="margin-top: 1em;"/>
-                    </div>
-
->>>>>>> dfbe0d25f75b4a3d8653f8b6861f21f2997a946d
                     </div>
                 </div>
                 <!-- jQuery CDN - Slim version (=without AJAX) -->
