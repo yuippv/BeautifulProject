@@ -25,7 +25,7 @@ import javax.transaction.UserTransaction;
  *
  * @author yypsx
  */
-public class GetLessonServlet extends HttpServlet {
+public class GetQuizServlet extends HttpServlet {
 
     @PersistenceUnit(unitName = "BeautifulProjectPU")
     EntityManagerFactory emf;
