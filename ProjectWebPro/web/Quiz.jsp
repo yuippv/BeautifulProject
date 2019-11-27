@@ -140,7 +140,8 @@
                                 </c:forEach>
                             </c:forEach>
                                 <div style="width:100%">
-                                    <input type="submit" value="submit" style="margin-top: 1em;"/>
+                                    <input type="text" name="lessonid" value="${lessonid}" hidden/>
+                                    <button type="submit" class="btn btn-success" value="submit">Submit you're answer</button>
                                 </div>
                             <!--name = "choice"-->
                         </div>

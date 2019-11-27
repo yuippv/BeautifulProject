@@ -34,6 +34,7 @@ public class ResultServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String questionId = request.getParameter("questionId") ;
+        String lessonid = request.getParameter("lessonid");
         ArrayList<Models.Quiz> qary = (ArrayList<Models.Quiz>) request.getSession(false).getAttribute("ques");
         int score = 0;
         for(Models.Quiz q : qary){
@@ -44,6 +45,7 @@ public class ResultServlet extends HttpServlet {
                 }
             }
         }
+        request.setAttribute("lessonid", lessonid);
         request.setAttribute("score", score);
     getServletContext().getRequestDispatcher("/Result.jsp").forward(request, response);
 

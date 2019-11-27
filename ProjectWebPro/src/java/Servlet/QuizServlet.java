@@ -47,6 +47,7 @@ public class QuizServlet extends HttpServlet {
         ArrayList<Models.Quiz> q = qc.findbyques(lessonid);
              System.out.println("5555");
              System.out.println(q);
+             request.setAttribute("lessonid", lesson);
         request.getSession().setAttribute("ques", q);
         getServletContext().getRequestDispatcher("/Quiz.jsp").forward(request, response);
         }
